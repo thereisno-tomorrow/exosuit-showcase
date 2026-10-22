@@ -1,0 +1,5 @@
+# Merge this one entry before the existing catch-all rule after the hostname
+# is selected. Preserve all existing ingress entries and tunnel credentials.
+# The listener port must match dashboard.port in the hub's existing config.
+- hostname: dashboard.example.test
+  service: http://127.0.0.1:8794

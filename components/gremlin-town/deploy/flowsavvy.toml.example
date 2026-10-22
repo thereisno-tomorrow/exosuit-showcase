@@ -1,0 +1,14 @@
+# INACTIVE. Merge into the hub's config only during the reviewed switch-on.
+# Values below are placeholders, never real account references or credentials.
+[flowsavvy]
+enabled = false
+length_flow = false
+busy_calendar = false
+token_file = "/etc/gremlin-town/flowsavvy-token"
+state_file = "/var/lib/gremlin-town/flowsavvy/state.sqlite3"
+list_id = "replace-with-dedicated-non-inbox-list"
+admin_hours_id = "replace-with-admin-profile"
+deep_focus_hours_id = "replace-with-deep-focus-profile"
+errands_hours_id = "replace-with-errands-profile"
+check_seconds = 180
+max_age_seconds = 600

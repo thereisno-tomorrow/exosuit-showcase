@@ -1,0 +1,2316 @@
+{
+  "_doc": "Synthetic brain.record/v2 fixtures for the Brain search recall benchmark (tests/benchmarks/test_recall.py). Each entry is the exact mapping passed to brain_core.records.record_from_mapping, then rendered and seeded into a FakeGitHub the way components/gremlin-town/tests/mcp/test_github_everyday.py seeds records. No real personal content: names, places and topics are all invented for this fixture.",
+  "records": [
+    {
+      "id": "brn_20260908_020000_00000001",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Buy printer ink",
+      "state": "open",
+      "created_at": "2026-09-08T02:00:00+00:00",
+      "updated_at": "2026-09-08T02:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_printer_ink_old",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Pick up a black ink cartridge before the printer runs dry."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_printer_ink_old",
+      "data": {
+        "level": "accepted",
+        "size": "task"
+      },
+      "body": "Pick up a black ink cartridge before the printer runs dry.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Pick up a black ink cartridge before the printer runs dry.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260925_020000_00000002",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Buy printer ink",
+      "state": "open",
+      "created_at": "2026-09-25T02:00:00+00:00",
+      "updated_at": "2026-09-25T02:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_printer_ink_new",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Pick up a black ink cartridge before the printer runs dry; the shop near the office has stock."
+        }
+      ],
+      "supersedes": [
+        "brn_20260908_020000_00000001"
+      ],
+      "dedupe_key": "fixture:recall:item_printer_ink_new",
+      "data": {
+        "level": "accepted",
+        "size": "task"
+      },
+      "body": "Pick up a black ink cartridge before the printer runs dry; the shop near the office has stock.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Pick up a black ink cartridge before the printer runs dry; the shop near the office has stock.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260922_010000_00000003",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Submit the Friday status report",
+      "state": "open",
+      "created_at": "2026-09-22T01:00:00+00:00",
+      "updated_at": "2026-09-22T01:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_friday_report",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The status report is due Friday morning before the team stand-up."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_friday_report",
+      "data": {
+        "level": "accepted",
+        "size": "task"
+      },
+      "body": "The status report is due Friday morning before the team stand-up.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The status report is due Friday morning before the team stand-up.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260924_030000_00000004",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Deck Priya is waiting on",
+      "state": "waiting",
+      "created_at": "2026-09-24T03:00:00+00:00",
+      "updated_at": "2026-09-24T03:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_priya_waiting",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Priya is waiting on me to send the updated deck before Thursday's client call."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_priya_waiting",
+      "data": {
+        "level": "accepted",
+        "size": "task",
+        "owed_to": "Priya"
+      },
+      "body": "Priya is waiting on me to send the updated deck before Thursday's client call.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Priya is waiting on me to send the updated deck before Thursday's client call.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260923_030000_00000005",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Venue Marcus is waiting on",
+      "state": "waiting",
+      "created_at": "2026-09-23T03:00:00+00:00",
+      "updated_at": "2026-09-23T03:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_marcus_waiting",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Marcus is waiting on me to confirm the venue booking for Saturday's offsite."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_marcus_waiting",
+      "data": {
+        "level": "accepted",
+        "size": "task",
+        "owed_to": "Marcus"
+      },
+      "body": "Marcus is waiting on me to confirm the venue booking for Saturday's offsite.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Marcus is waiting on me to confirm the venue booking for Saturday's offsite.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260920_090000_00000006",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Study for next week's exam",
+      "state": "open",
+      "created_at": "2026-09-20T09:00:00+00:00",
+      "updated_at": "2026-09-20T09:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_exam",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Block out revision time before next week's exam; go over chapters four to six."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_exam",
+      "data": {
+        "level": "accepted",
+        "size": "task"
+      },
+      "body": "Block out revision time before next week's exam; go over chapters four to six.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Block out revision time before next week's exam; go over chapters four to six.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260905_090000_00000007",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Renew the gym membership",
+      "state": "open",
+      "created_at": "2026-09-05T09:00:00+00:00",
+      "updated_at": "2026-09-05T09:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_gym",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The gym membership lapses at the end of the month; renew it online."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_gym",
+      "data": {
+        "level": "suggested",
+        "size": "task"
+      },
+      "body": "The gym membership lapses at the end of the month; renew it online.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The gym membership lapses at the end of the month; renew it online.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260918_100000_00000008",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Pick up the dry cleaning",
+      "state": "done",
+      "created_at": "2026-09-18T10:00:00+00:00",
+      "updated_at": "2026-09-18T10:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_dry_cleaning",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Picked up the dry cleaning from the shop on the way home."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_dry_cleaning",
+      "data": {
+        "level": "accepted",
+        "size": "task",
+        "check": {
+          "locator": "fixture:recall:item_dry_cleaning",
+          "checked_by": "priya"
+        }
+      },
+      "body": "Picked up the dry cleaning from the shop on the way home.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Picked up the dry cleaning from the shop on the way home.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260911_110000_00000009",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Fix the leaking kitchen tap",
+      "state": "open",
+      "created_at": "2026-09-11T11:00:00+00:00",
+      "updated_at": "2026-09-11T11:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_kitchen_tap",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The kitchen tap drips overnight; call the plumber to fix the leak."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_kitchen_tap",
+      "data": {
+        "level": "accepted",
+        "size": "task"
+      },
+      "body": "The kitchen tap drips overnight; call the plumber to fix the leak.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The kitchen tap drips overnight; call the plumber to fix the leak.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260917_050000_0000000a",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Book the dentist appointment",
+      "state": "open",
+      "created_at": "2026-09-17T05:00:00+00:00",
+      "updated_at": "2026-09-17T05:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_dentist",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Call the clinic to book a dentist appointment for a check-up."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_dentist",
+      "data": {
+        "level": "accepted",
+        "size": "task",
+        "aliases": [
+          "dentist visit"
+        ]
+      },
+      "body": "Call the clinic to book a dentist appointment for a check-up.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Call the clinic to book a dentist appointment for a check-up.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260921_060000_0000000b",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Community garden shift",
+      "state": "open",
+      "created_at": "2026-09-21T06:00:00+00:00",
+      "updated_at": "2026-09-21T06:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_compost_alias",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Take the Sunday shift at the community garden, mainly turning the bins."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_compost_alias",
+      "data": {
+        "level": "accepted",
+        "size": "task",
+        "aliases": [
+          "compost duty"
+        ]
+      },
+      "body": "Take the Sunday shift at the community garden, mainly turning the bins.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Take the Sunday shift at the community garden, mainly turning the bins.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260909_060000_0000000c",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Garden tools list",
+      "state": "open",
+      "created_at": "2026-09-09T06:00:00+00:00",
+      "updated_at": "2026-09-09T06:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_garden_tools",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Need new gloves and a small trowel; also check the compost levels before the shift."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_garden_tools",
+      "data": {
+        "level": "possible",
+        "size": "task"
+      },
+      "body": "Need new gloves and a small trowel; also check the compost levels before the shift.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Need new gloves and a small trowel; also check the compost levels before the shift.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260914_070000_0000000d",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Return the library books",
+      "state": "open",
+      "created_at": "2026-09-14T07:00:00+00:00",
+      "updated_at": "2026-09-14T07:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_library_books",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Return the two borrowed books to the library before the fine grows."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_library_books",
+      "data": {
+        "level": "accepted",
+        "size": "task"
+      },
+      "body": "Return the two borrowed books to the library before the fine grows.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Return the two borrowed books to the library before the fine grows.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260906_070000_0000000e",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Order more coffee beans",
+      "state": "open",
+      "created_at": "2026-09-06T07:00:00+00:00",
+      "updated_at": "2026-09-06T07:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_coffee_beans",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Thinking about ordering a fresh bag of coffee beans for the office machine."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_coffee_beans",
+      "data": {
+        "level": "possible",
+        "size": "task"
+      },
+      "body": "Thinking about ordering a fresh bag of coffee beans for the office machine.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Thinking about ordering a fresh bag of coffee beans for the office machine.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260919_070000_0000000f",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Renew the parking permit",
+      "state": "open",
+      "created_at": "2026-09-19T07:00:00+00:00",
+      "updated_at": "2026-09-19T07:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_parking_permit",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The season parking permit expires this month; renew it before it lapses."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_parking_permit",
+      "data": {
+        "level": "accepted",
+        "size": "task"
+      },
+      "body": "The season parking permit expires this month; renew it before it lapses.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The season parking permit expires this month; renew it before it lapses.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260912_080000_00000010",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Send Elena the invoice",
+      "state": "open",
+      "created_at": "2026-09-12T08:00:00+00:00",
+      "updated_at": "2026-09-12T08:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_elena_invoice",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Elena needs the invoice emailed before she can process the payment."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_elena_invoice",
+      "data": {
+        "level": "accepted",
+        "size": "task"
+      },
+      "body": "Elena needs the invoice emailed before she can process the payment.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Elena needs the invoice emailed before she can process the payment.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260904_080000_00000011",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Cancel the unused streaming subscription",
+      "state": "open",
+      "created_at": "2026-09-04T08:00:00+00:00",
+      "updated_at": "2026-09-04T08:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_streaming",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Noticed a streaming subscription that has not been used in months; consider cancelling it."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_streaming",
+      "data": {
+        "level": "suggested",
+        "size": "task"
+      },
+      "body": "Noticed a streaming subscription that has not been used in months; consider cancelling it.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Noticed a streaming subscription that has not been used in months; consider cancelling it.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260916_080000_00000012",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Pack for the weekend trip",
+      "state": "open",
+      "created_at": "2026-09-16T08:00:00+00:00",
+      "updated_at": "2026-09-16T08:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_weekend_trip",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Pack for the weekend trip to Ipoh: charger, hiking shoes, raincoat."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_weekend_trip",
+      "data": {
+        "level": "accepted",
+        "size": "task"
+      },
+      "body": "Pack for the weekend trip to Ipoh: charger, hiking shoes, raincoat.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Pack for the weekend trip to Ipoh: charger, hiking shoes, raincoat.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260913_083000_00000013",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Water the balcony plants",
+      "state": "done",
+      "created_at": "2026-09-13T08:30:00+00:00",
+      "updated_at": "2026-09-13T08:30:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_balcony_plants",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Watered the balcony plants before leaving for the week."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_balcony_plants",
+      "data": {
+        "level": "accepted",
+        "size": "task",
+        "check": {
+          "locator": "fixture:recall:item_balcony_plants",
+          "checked_by": "priya"
+        }
+      },
+      "body": "Watered the balcony plants before leaving for the week.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Watered the balcony plants before leaving for the week.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260907_090000_00000014",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Drop off the parcel at the post office",
+      "state": "open",
+      "created_at": "2026-09-07T09:00:00+00:00",
+      "updated_at": "2026-09-07T09:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_parcel",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Drop off the parcel at the post office before the counter closes."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_parcel",
+      "data": {
+        "level": "accepted",
+        "size": "task"
+      },
+      "body": "Drop off the parcel at the post office before the counter closes.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Drop off the parcel at the post office before the counter closes.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260910_093000_00000015",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Confirm the reading group venue",
+      "state": "open",
+      "created_at": "2026-09-10T09:30:00+00:00",
+      "updated_at": "2026-09-10T09:30:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_reading_group",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Confirm the venue for next month's reading group meetup."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_reading_group",
+      "data": {
+        "level": "accepted",
+        "size": "task"
+      },
+      "body": "Confirm the venue for next month's reading group meetup.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Confirm the venue for next month's reading group meetup.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260923_100000_00000016",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Follow up on the laptop charger warranty",
+      "state": "open",
+      "created_at": "2026-09-23T10:00:00+00:00",
+      "updated_at": "2026-09-23T10:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_laptop_charger",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The laptop charger stopped working; follow up on the warranty claim."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_laptop_charger",
+      "data": {
+        "level": "accepted",
+        "size": "task"
+      },
+      "body": "The laptop charger stopped working; follow up on the warranty claim.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The laptop charger stopped working; follow up on the warranty claim.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260915_103000_00000017",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Drop the car in for servicing",
+      "state": "blocked",
+      "created_at": "2026-09-15T10:30:00+00:00",
+      "updated_at": "2026-09-15T10:30:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_car_servicing",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Car needs servicing but the workshop is fully booked until next week."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_car_servicing",
+      "data": {
+        "level": "accepted",
+        "size": "task"
+      },
+      "body": "Car needs servicing but the workshop is fully booked until next week.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Car needs servicing but the workshop is fully booked until next week.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260903_100000_00000018",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Pay the town council conservancy fee",
+      "state": "open",
+      "created_at": "2026-09-03T10:00:00+00:00",
+      "updated_at": "2026-09-03T10:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_town_council",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Pay the town council conservancy fee before the due date this quarter."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_town_council",
+      "data": {
+        "level": "accepted",
+        "size": "task"
+      },
+      "body": "Pay the town council conservancy fee before the due date this quarter.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Pay the town council conservancy fee before the due date this quarter.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260921_110000_00000019",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Return Farid's borrowed drill",
+      "state": "open",
+      "created_at": "2026-09-21T11:00:00+00:00",
+      "updated_at": "2026-09-21T11:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_farid_drill",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Return Farid's drill; borrowed it for the shelf installation last week."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_farid_drill",
+      "data": {
+        "level": "accepted",
+        "size": "task"
+      },
+      "body": "Return Farid's drill; borrowed it for the shelf installation last week.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Return Farid's drill; borrowed it for the shelf installation last week.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260902_110000_0000001a",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Draft the quarterly residents newsletter",
+      "state": "open",
+      "created_at": "2026-09-02T11:00:00+00:00",
+      "updated_at": "2026-09-02T11:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_newsletter",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Draft the quarterly newsletter for the residents' committee."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_newsletter",
+      "data": {
+        "level": "suggested",
+        "size": "task"
+      },
+      "body": "Draft the quarterly newsletter for the residents' committee.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Draft the quarterly newsletter for the residents' committee.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260919_120000_0000001b",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Renew passport before it expires",
+      "state": "open",
+      "created_at": "2026-09-19T12:00:00+00:00",
+      "updated_at": "2026-09-19T12:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_passport",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Passport expires in four months; start the renewal paperwork soon."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_passport",
+      "data": {
+        "level": "accepted",
+        "size": "task",
+        "aliases": [
+          "passport renewal"
+        ]
+      },
+      "body": "Passport expires in four months; start the renewal paperwork soon.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Passport expires in four months; start the renewal paperwork soon.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260830_120000_0000001c",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Kids' old art supplies",
+      "state": "dropped",
+      "created_at": "2026-08-30T12:00:00+00:00",
+      "updated_at": "2026-08-30T12:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_art_supplies",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The kids' old art supplies are not needed any more; already given away."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_art_supplies",
+      "data": {
+        "level": "accepted",
+        "size": "task",
+        "reason": "no longer needed"
+      },
+      "body": "The kids' old art supplies are not needed any more; already given away.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The kids' old art supplies are not needed any more; already given away.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260922_123000_0000001d",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Confirm the team offsite date",
+      "state": "open",
+      "created_at": "2026-09-22T12:30:00+00:00",
+      "updated_at": "2026-09-22T12:30:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_offsite",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Confirm the team offsite date with the venue before seats fill up."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_offsite",
+      "data": {
+        "level": "accepted",
+        "size": "task"
+      },
+      "body": "Confirm the team offsite date with the venue before seats fill up.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Confirm the team offsite date with the venue before seats fill up.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260916_130000_0000001e",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Chase the invoice from the electrician",
+      "state": "waiting",
+      "created_at": "2026-09-16T13:00:00+00:00",
+      "updated_at": "2026-09-16T13:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_electrician_invoice",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Waiting on the electrician to send the invoice for last week's rewiring job."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_electrician_invoice",
+      "data": {
+        "level": "accepted",
+        "size": "task",
+        "owed_to": "electrician"
+      },
+      "body": "Waiting on the electrician to send the invoice for last week's rewiring job.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Waiting on the electrician to send the invoice for last week's rewiring job.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260901_130000_0000001f",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Sort out the router firmware update",
+      "state": "open",
+      "created_at": "2026-09-01T13:00:00+00:00",
+      "updated_at": "2026-09-01T13:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_router_firmware",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "A firmware update is available for the router; sort it out before the connection gets flaky again."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_router_firmware",
+      "data": {
+        "level": "suggested",
+        "size": "task"
+      },
+      "body": "A firmware update is available for the router; sort it out before the connection gets flaky again.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "A firmware update is available for the router; sort it out before the connection gets flaky again.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260924_133000_00000020",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Confirm Grace's flight pickup time",
+      "state": "open",
+      "created_at": "2026-09-24T13:30:00+00:00",
+      "updated_at": "2026-09-24T13:30:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_grace_flight",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Confirm Grace's flight pickup time; her flight lands Saturday evening."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_grace_flight",
+      "data": {
+        "level": "accepted",
+        "size": "task"
+      },
+      "body": "Confirm Grace's flight pickup time; her flight lands Saturday evening.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Confirm Grace's flight pickup time; her flight lands Saturday evening.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260829_140000_00000021",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Weekend hiking trail idea",
+      "state": "open",
+      "created_at": "2026-08-29T14:00:00+00:00",
+      "updated_at": "2026-08-29T14:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_hiking_idea",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Idea for a weekend hiking trail; check opening hours first."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_hiking_idea",
+      "data": {
+        "level": "possible",
+        "size": "task"
+      },
+      "body": "Idea for a weekend hiking trail; check opening hours first.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Idea for a weekend hiking trail; check opening hours first.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260913_143000_00000022",
+      "schema": "brain.record/v2",
+      "kind": "item",
+      "title": "Check the smoke detector batteries",
+      "state": "open",
+      "created_at": "2026-09-13T14:30:00+00:00",
+      "updated_at": "2026-09-13T14:30:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:item_smoke_detector",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Check and replace the smoke detector batteries in the hallway."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:item_smoke_detector",
+      "data": {
+        "level": "accepted",
+        "size": "task"
+      },
+      "body": "Check and replace the smoke detector batteries in the hallway.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Check and replace the smoke detector batteries in the hallway.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260905_040000_00000023",
+      "schema": "brain.record/v2",
+      "kind": "fact",
+      "title": "Jason owes me fifty dollars",
+      "state": "current",
+      "created_at": "2026-09-05T04:00:00+00:00",
+      "updated_at": "2026-09-05T04:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:fact_jason_owes_old",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Jason borrowed fifty dollars for the taxi fare and said he would pay me back."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:fact_jason_owes_old",
+      "data": {
+        "observed_at": "2026-09-05T04:00:00+00:00"
+      },
+      "body": "Jason borrowed fifty dollars for the taxi fare and said he would pay me back.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Jason borrowed fifty dollars for the taxi fare and said he would pay me back.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260924_040000_00000024",
+      "schema": "brain.record/v2",
+      "kind": "fact",
+      "title": "Jason owes me fifty dollars",
+      "state": "current",
+      "created_at": "2026-09-24T04:00:00+00:00",
+      "updated_at": "2026-09-24T04:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:fact_jason_owes_new",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Jason still owes fifty dollars from the taxi fare; he says he will pay this week."
+        }
+      ],
+      "supersedes": [
+        "brn_20260905_040000_00000023"
+      ],
+      "dedupe_key": "fixture:recall:fact_jason_owes_new",
+      "data": {
+        "observed_at": "2026-09-24T04:00:00+00:00"
+      },
+      "body": "Jason still owes fifty dollars from the taxi fare; he says he will pay this week.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Jason still owes fifty dollars from the taxi fare; he says he will pay this week.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260902_050000_00000025",
+      "schema": "brain.record/v2",
+      "kind": "fact",
+      "title": "The home wifi network name is TanFamily5G",
+      "state": "current",
+      "created_at": "2026-09-02T05:00:00+00:00",
+      "updated_at": "2026-09-02T05:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:fact_wifi_name",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The home wifi network name is TanFamily5G and the password is on the router sticker."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:fact_wifi_name",
+      "data": {
+        "observed_at": "2026-09-02T05:00:00+00:00",
+        "aliases": [
+          "wifi name"
+        ]
+      },
+      "body": "The home wifi network name is TanFamily5G and the password is on the router sticker.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The home wifi network name is TanFamily5G and the password is on the router sticker.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260909_050000_00000026",
+      "schema": "brain.record/v2",
+      "kind": "fact",
+      "title": "The reading group meets on the first Tuesday",
+      "state": "current",
+      "created_at": "2026-09-09T05:00:00+00:00",
+      "updated_at": "2026-09-09T05:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:fact_reading_group_schedule",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The reading group meets on the first Tuesday of the month at Elena's place."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:fact_reading_group_schedule",
+      "data": {
+        "observed_at": "2026-09-09T05:00:00+00:00"
+      },
+      "body": "The reading group meets on the first Tuesday of the month at Elena's place.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The reading group meets on the first Tuesday of the month at Elena's place.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260911_053000_00000027",
+      "schema": "brain.record/v2",
+      "kind": "fact",
+      "title": "The car's road tax expires in November",
+      "state": "current",
+      "created_at": "2026-09-11T05:30:00+00:00",
+      "updated_at": "2026-09-11T05:30:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:fact_road_tax",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The car's road tax expires in November; renew it alongside the servicing."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:fact_road_tax",
+      "data": {
+        "observed_at": "2026-09-11T05:30:00+00:00"
+      },
+      "body": "The car's road tax expires in November; renew it alongside the servicing.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The car's road tax expires in November; renew it alongside the servicing.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260908_060000_00000028",
+      "schema": "brain.record/v2",
+      "kind": "fact",
+      "title": "The office guest wifi password changes monthly",
+      "state": "current",
+      "created_at": "2026-09-08T06:00:00+00:00",
+      "updated_at": "2026-09-08T06:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:fact_office_wifi_guest",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The office guest wifi password changes on the first of every month; ask the front desk."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:fact_office_wifi_guest",
+      "data": {
+        "observed_at": "2026-09-08T06:00:00+00:00"
+      },
+      "body": "The office guest wifi password changes on the first of every month; ask the front desk.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The office guest wifi password changes on the first of every month; ask the front desk.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260906_063000_00000029",
+      "schema": "brain.record/v2",
+      "kind": "fact",
+      "title": "Marcus prefers meeting in the mornings",
+      "state": "current",
+      "created_at": "2026-09-06T06:30:00+00:00",
+      "updated_at": "2026-09-06T06:30:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:fact_marcus_mornings",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Marcus mentioned he prefers meetings before 11am; keep that in mind when scheduling."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:fact_marcus_mornings",
+      "data": {
+        "observed_at": "2026-09-06T06:30:00+00:00"
+      },
+      "body": "Marcus mentioned he prefers meetings before 11am; keep that in mind when scheduling.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Marcus mentioned he prefers meetings before 11am; keep that in mind when scheduling.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260907_070000_0000002a",
+      "schema": "brain.record/v2",
+      "kind": "fact",
+      "title": "Garden shed lock was fixed",
+      "state": "current",
+      "created_at": "2026-09-07T07:00:00+00:00",
+      "updated_at": "2026-09-07T07:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:fact_garden_shed",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The community garden shed's lock was fixed last week; the compost bin lid is next on the list."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:fact_garden_shed",
+      "data": {
+        "observed_at": "2026-09-07T07:00:00+00:00"
+      },
+      "body": "The community garden shed's lock was fixed last week; the compost bin lid is next on the list.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The community garden shed's lock was fixed last week; the compost bin lid is next on the list.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260915_073000_0000002b",
+      "schema": "brain.record/v2",
+      "kind": "fact",
+      "title": "Elena's new phone number ends in 8842",
+      "state": "current",
+      "created_at": "2026-09-15T07:30:00+00:00",
+      "updated_at": "2026-09-15T07:30:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:fact_elena_phone",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Elena's new phone number ends in 8842; update the contact card."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:fact_elena_phone",
+      "data": {
+        "observed_at": "2026-09-15T07:30:00+00:00"
+      },
+      "body": "Elena's new phone number ends in 8842; update the contact card.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Elena's new phone number ends in 8842; update the contact card.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260912_080000_0000002c",
+      "schema": "brain.record/v2",
+      "kind": "fact",
+      "title": "The plumber's callout fee is eighty dollars",
+      "state": "current",
+      "created_at": "2026-09-12T08:00:00+00:00",
+      "updated_at": "2026-09-12T08:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:fact_plumber_fee",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The plumber's callout fee is eighty dollars, waived if repairs take over an hour."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:fact_plumber_fee",
+      "data": {
+        "observed_at": "2026-09-12T08:00:00+00:00"
+      },
+      "body": "The plumber's callout fee is eighty dollars, waived if repairs take over an hour.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The plumber's callout fee is eighty dollars, waived if repairs take over an hour.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260917_083000_0000002d",
+      "schema": "brain.record/v2",
+      "kind": "fact",
+      "title": "The clinic is closed on Wednesdays",
+      "state": "current",
+      "created_at": "2026-09-17T08:30:00+00:00",
+      "updated_at": "2026-09-17T08:30:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:fact_clinic_hours",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The clinic is closed on Wednesdays; book the dentist appointment on another day."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:fact_clinic_hours",
+      "data": {
+        "observed_at": "2026-09-17T08:30:00+00:00"
+      },
+      "body": "The clinic is closed on Wednesdays; book the dentist appointment on another day.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The clinic is closed on Wednesdays; book the dentist appointment on another day.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260903_090000_0000002e",
+      "schema": "brain.record/v2",
+      "kind": "fact",
+      "title": "The upstairs neighbour's renovation ends in December",
+      "state": "current",
+      "created_at": "2026-09-03T09:00:00+00:00",
+      "updated_at": "2026-09-03T09:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:fact_neighbour_reno",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The upstairs neighbour's renovation is expected to end in December; noise should stop after that."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:fact_neighbour_reno",
+      "data": {
+        "observed_at": "2026-09-03T09:00:00+00:00"
+      },
+      "body": "The upstairs neighbour's renovation is expected to end in December; noise should stop after that.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The upstairs neighbour's renovation is expected to end in December; noise should stop after that.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260901_090000_0000002f",
+      "schema": "brain.record/v2",
+      "kind": "fact",
+      "title": "The office lease renews every two years",
+      "state": "current",
+      "created_at": "2026-09-01T09:00:00+00:00",
+      "updated_at": "2026-09-01T09:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:fact_office_lease",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The office lease renews every two years; the next renewal review is next year."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:fact_office_lease",
+      "data": {
+        "observed_at": "2026-09-01T09:00:00+00:00"
+      },
+      "body": "The office lease renews every two years; the next renewal review is next year.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The office lease renews every two years; the next renewal review is next year.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260924_140000_00000030",
+      "schema": "brain.record/v2",
+      "kind": "fact",
+      "title": "Grace's flight number is SQ318",
+      "state": "current",
+      "created_at": "2026-09-24T14:00:00+00:00",
+      "updated_at": "2026-09-24T14:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:fact_grace_flight_number",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "Grace's flight number is SQ318, landing Saturday evening at the airport."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:fact_grace_flight_number",
+      "data": {
+        "observed_at": "2026-09-24T14:00:00+00:00",
+        "aliases": [
+          "flight SQ318"
+        ]
+      },
+      "body": "Grace's flight number is SQ318, landing Saturday evening at the airport.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "Grace's flight number is SQ318, landing Saturday evening at the airport.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260828_100000_00000031",
+      "schema": "brain.record/v2",
+      "kind": "fact",
+      "title": "The parking permit zone is Zone 3",
+      "state": "current",
+      "created_at": "2026-08-28T10:00:00+00:00",
+      "updated_at": "2026-08-28T10:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:fact_parking_zone_old",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The parking permit zone is Zone 3 as of this year's renewal."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:fact_parking_zone_old",
+      "data": {
+        "observed_at": "2026-08-28T10:00:00+00:00"
+      },
+      "body": "The parking permit zone is Zone 3 as of this year's renewal.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The parking permit zone is Zone 3 as of this year's renewal.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260922_100000_00000032",
+      "schema": "brain.record/v2",
+      "kind": "fact",
+      "title": "The parking permit zone is Zone 5",
+      "state": "current",
+      "created_at": "2026-09-22T10:00:00+00:00",
+      "updated_at": "2026-09-22T10:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:fact_parking_zone_new",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The parking permit zone changed to Zone 5 after the boundary redraw this year."
+        }
+      ],
+      "supersedes": [
+        "brn_20260828_100000_00000031"
+      ],
+      "dedupe_key": "fixture:recall:fact_parking_zone_new",
+      "data": {
+        "observed_at": "2026-09-22T10:00:00+00:00"
+      },
+      "body": "The parking permit zone changed to Zone 5 after the boundary redraw this year.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The parking permit zone changed to Zone 5 after the boundary redraw this year.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260902_110000_00000033",
+      "schema": "brain.record/v2",
+      "kind": "fact",
+      "title": "The router firmware version is now 2.3.1",
+      "state": "current",
+      "created_at": "2026-09-02T11:00:00+00:00",
+      "updated_at": "2026-09-02T11:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:fact_router_firmware_version",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The router firmware updated to version 2.3.1 after the latest patch."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:fact_router_firmware_version",
+      "data": {
+        "observed_at": "2026-09-02T11:00:00+00:00"
+      },
+      "body": "The router firmware updated to version 2.3.1 after the latest patch.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The router firmware updated to version 2.3.1 after the latest patch.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260831_110000_00000034",
+      "schema": "brain.record/v2",
+      "kind": "fact",
+      "title": "The community garden shift rota resets every March",
+      "state": "current",
+      "created_at": "2026-08-31T11:00:00+00:00",
+      "updated_at": "2026-08-31T11:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:fact_garden_rota",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "The community garden shift rota resets every March; sign up again then."
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:fact_garden_rota",
+      "data": {
+        "observed_at": "2026-08-31T11:00:00+00:00"
+      },
+      "body": "The community garden shift rota resets every March; sign up again then.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "The community garden shift rota resets every March; sign up again then.",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260901_020000_00000035",
+      "schema": "brain.record/v2",
+      "kind": "preference",
+      "title": "Prefers written summaries over long calls",
+      "state": "active",
+      "created_at": "2026-09-01T02:00:00+00:00",
+      "updated_at": "2026-09-01T02:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:pref_written_summaries",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "I prefer written summaries over long calls"
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:pref_written_summaries",
+      "data": {
+        "scope": "personal",
+        "stability": "durable",
+        "evidence": [],
+        "correction_history": []
+      },
+      "body": "Written summaries over long calls.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "I prefer written summaries over long calls",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260902_020000_00000036",
+      "schema": "brain.record/v2",
+      "kind": "preference",
+      "title": "Prefers Tuesday mornings for check-ins",
+      "state": "active",
+      "created_at": "2026-09-02T02:00:00+00:00",
+      "updated_at": "2026-09-02T02:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:pref_tuesday_checkins",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "I prefer Tuesday mornings for check-ins"
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:pref_tuesday_checkins",
+      "data": {
+        "scope": "personal",
+        "stability": "durable",
+        "evidence": [],
+        "correction_history": []
+      },
+      "body": "Tuesday mornings for check-ins.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "I prefer Tuesday mornings for check-ins",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260903_020000_00000037",
+      "schema": "brain.record/v2",
+      "kind": "preference",
+      "title": "Prefers window seats when flying",
+      "state": "active",
+      "created_at": "2026-09-03T02:00:00+00:00",
+      "updated_at": "2026-09-03T02:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:pref_window_seat",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "I prefer window seats when flying"
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:pref_window_seat",
+      "data": {
+        "scope": "personal",
+        "stability": "durable",
+        "evidence": [],
+        "correction_history": []
+      },
+      "body": "Window seats when flying.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "I prefer window seats when flying",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260904_020000_00000038",
+      "schema": "brain.record/v2",
+      "kind": "preference",
+      "title": "Prefers black coffee, no sugar",
+      "state": "active",
+      "created_at": "2026-09-04T02:00:00+00:00",
+      "updated_at": "2026-09-04T02:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:pref_black_coffee",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "I prefer black coffee, no sugar"
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:pref_black_coffee",
+      "data": {
+        "scope": "personal",
+        "stability": "durable",
+        "evidence": [],
+        "correction_history": []
+      },
+      "body": "Black coffee, no sugar.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "I prefer black coffee, no sugar",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260905_020000_00000039",
+      "schema": "brain.record/v2",
+      "kind": "preference",
+      "title": "Prefers text over voice notes",
+      "state": "active",
+      "created_at": "2026-09-05T02:00:00+00:00",
+      "updated_at": "2026-09-05T02:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:pref_text_over_voice",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "I prefer text over voice notes"
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:pref_text_over_voice",
+      "data": {
+        "scope": "personal",
+        "stability": "durable",
+        "evidence": [],
+        "correction_history": []
+      },
+      "body": "Text over voice notes.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "I prefer text over voice notes",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260906_020000_0000003a",
+      "schema": "brain.record/v2",
+      "kind": "preference",
+      "title": "Prefers meeting notes emailed within a day",
+      "state": "active",
+      "created_at": "2026-09-06T02:00:00+00:00",
+      "updated_at": "2026-09-06T02:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:pref_notes_within_day",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "I prefer meeting notes emailed within a day"
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:pref_notes_within_day",
+      "data": {
+        "scope": "personal",
+        "stability": "durable",
+        "evidence": [],
+        "correction_history": []
+      },
+      "body": "Meeting notes emailed within a day.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "I prefer meeting notes emailed within a day",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260907_020000_0000003b",
+      "schema": "brain.record/v2",
+      "kind": "preference",
+      "title": "Prefers a standing desk setup",
+      "state": "active",
+      "created_at": "2026-09-07T02:00:00+00:00",
+      "updated_at": "2026-09-07T02:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:pref_standing_desk",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "I prefer a standing desk setup"
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:pref_standing_desk",
+      "data": {
+        "scope": "personal",
+        "stability": "durable",
+        "evidence": [],
+        "correction_history": []
+      },
+      "body": "A standing desk setup.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "I prefer a standing desk setup",
+        "recorded_by": "brain-home"
+      }
+    },
+    {
+      "id": "brn_20260908_020000_0000003c",
+      "schema": "brain.record/v2",
+      "kind": "preference",
+      "title": "Prefers minimal notifications after 9pm",
+      "state": "active",
+      "created_at": "2026-09-08T02:00:00+00:00",
+      "updated_at": "2026-09-08T02:00:00+00:00",
+      "sensitivity": "private",
+      "vaults": [
+        "vault://brain-home"
+      ],
+      "owners": [
+        "brain-home"
+      ],
+      "entities": [],
+      "evidence": [
+        {
+          "source_type": "fixture",
+          "locator": "fixture:recall:pref_minimal_notifications",
+          "content_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "excerpt": "I prefer minimal notifications after 9pm"
+        }
+      ],
+      "supersedes": [],
+      "dedupe_key": "fixture:recall:pref_minimal_notifications",
+      "data": {
+        "scope": "personal",
+        "stability": "durable",
+        "evidence": [],
+        "correction_history": []
+      },
+      "body": "Minimal notifications after 9pm.",
+      "source": {
+        "said_by": "owner",
+        "came_by": "direct",
+        "words": "I prefer minimal notifications after 9pm",
+        "recorded_by": "brain-home"
+      }
+    }
+  ]
+}

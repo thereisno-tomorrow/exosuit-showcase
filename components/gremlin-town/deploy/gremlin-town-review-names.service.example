@@ -1,0 +1,32 @@
+# INACTIVE example. Separate from the 06:00 review: never make that unit wait for this one.
+# Requires the installed matching BC/GT release, [review] enabled, sender/recipient
+# routes in both directions, Brain Home read access and the existing Diablo wake route.
+# Copy any required credential drop-ins from the reviewed live review unit.
+[Unit]
+Description=Suggest names for Exosuit's pending morning questions
+After=gremlin-town.service
+
+[Service]
+Type=oneshot
+User=gremlin-town
+Group=gremlin-town
+WorkingDirectory=/opt/gremlin-town/current
+EnvironmentFile=/etc/gremlin-town/service.env
+LoadCredential=github_app_key:/etc/gremlin-town/github-app-gt.pem
+Environment=GT_GITHUB_APP_KEY_FILE=%d/github_app_key
+ExecStart=/opt/gremlin-town/current/.venv/bin/gremlin-town review names --config /etc/gremlin-town/config.toml
+TimeoutStartSec=120
+UMask=0077
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
+ReadWritePaths=/var/lib/gremlin-town /var/lib/gremlin-town-brain
+ReadWritePaths=-/var/lib/gremlin-town-oauth
+# No courier: Diablo returns a GT result in a separate, silent webhook run.

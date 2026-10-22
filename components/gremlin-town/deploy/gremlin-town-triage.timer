@@ -1,0 +1,9 @@
+[Unit]
+Description=Run Gremlin Town + Brain Core triage daily (06:30 Singapore time)
+
+[Timer]
+OnCalendar=*-*-* 22:30:00 UTC
+Persistent=true
+
+[Install]
+WantedBy=timers.target

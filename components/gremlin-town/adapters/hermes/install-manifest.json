@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "component": "hermes-gremlin-town-plugin",
+  "install_root": "/opt/data/plugins/gremlin-town",
+  "host_backing_root": "/srv/hermes-example/plugins/gremlin-town",
+  "hub_runtime_reference": "/opt/gremlin-town/current",
+  "files": [
+    {
+      "source": "adapters/hermes/__init__.py",
+      "destination": "/opt/data/plugins/gremlin-town/__init__.py",
+      "mode": "0644",
+      "sha256": "476232036b7ca54b2e6fdadaa275ea5dfea18acb345ce92ed03d9627af27092f"
+    },
+    {
+      "source": "adapters/hermes/plugin.py",
+      "destination": "/opt/data/plugins/gremlin-town/plugin.py",
+      "mode": "0644",
+      "sha256": "6999f403540c4d880362abddc6445a3bb7f60ce2e7cf3896fad4d5775d5875bf"
+    },
+    {
+      "source": "adapters/hermes/hub_client.py",
+      "destination": "/opt/data/plugins/gremlin-town/hub_client.py",
+      "mode": "0644",
+      "sha256": "6120dbd41326a23aead881bc413c8f9fd09fe5cebfda15856ae7b62c45eb726a"
+    },
+    {
+      "source": "adapters/hermes/plugin.yaml",
+      "destination": "/opt/data/plugins/gremlin-town/plugin.yaml",
+      "mode": "0644",
+      "sha256": "062ee6ff162ca8abfb630f0c1951e8b25b8d70b0ebdc7ff15cd2ed0960c319fd"
+    },
+    {
+      "source": "adapters/hermes/settings.json",
+      "destination": "/opt/data/plugins/gremlin-town/settings.json",
+      "mode": "0644",
+      "sha256": "f57bf19a9ef31828fb632e53d6d31a14b849a966772801a01166ee8d3f13ad80"
+    },
+    {
+      "source": "adapters/hermes/plugin-settings.json",
+      "destination": "/opt/data/plugins/gremlin-town/plugin-settings.json",
+      "mode": "0644",
+      "sha256": "918695241589c78c21cec055846f94ea67f0b062fc4f891b9844ff7f9215d396"
+    }
+  ],
+  "runtime_config": {
+    "non_secret_settings": "/opt/data/plugins/gremlin-town/settings.json",
+    "endpoint_env_override": "GREMLIN_TOWN_HUB_URL",
+    "accepted_token_sources": [
+      "GREMLIN_TOWN_HUB_TOKEN",
+      "GREMLIN_TOWN_HUB_TOKEN_FILE"
+    ],
+    "token_file_requirement": "absolute regular file; runtime-owned; parent 0700; file 0600",
+    "optional_features_settings": "/opt/data/plugins/gremlin-town/plugin-settings.json",
+    "optional_features_default": "enabled_optional_features: [] (orientation/review tools unregistered until named there)"
+  },
+  "network_or_install_effects": false,
+  "skill_install_root": "/opt/data/skills",
+  "skill_host_backing_root": "/srv/hermes-example/skills",
+  "skill_files": [
+    {
+      "source": "adapters/hermes/skills/calendar-time/SKILL.md",
+      "mode": "0644",
+      "sha256": "7b7497c502e2edc39e3fb9269dd2aa65ae1bb56d18444f2966c17c4c378bd4af",
+      "destination": "/opt/data/skills/calendar-time/SKILL.md"
+    },
+    {
+      "source": "adapters/hermes/skills/gremlin-town-review/SKILL.md",
+      "mode": "0644",
+      "sha256": "48613ec46c6fffc6b292af2bc3fae8d5d23ace1ff5375a8a73d95f6d7eaa628f",
+      "destination": "/opt/data/skills/gremlin-town-review/SKILL.md"
+    },
+    {
+      "source": "adapters/hermes/skills/gremlin-town/SKILL.md",
+      "mode": "0644",
+      "sha256": "501e20e04e87e9e2f2ce13aff0d7bff8c5bd34002873c9118e4419c9729e5426",
+      "destination": "/opt/data/skills/gremlin-town/SKILL.md"
+    },
+    {
+      "source": "adapters/hermes/skills/next-action/SKILL.md",
+      "mode": "0644",
+      "sha256": "95a0adf92bb88e2f4c0c109c1d785bed85ccdaca5f4a312b806b2bb962ea9c08",
+      "destination": "/opt/data/skills/next-action/SKILL.md"
+    }
+  ],
+  "package_version": "1.6.0",
+  "participant_id": "hermes-wa",
+  "display_name": "Diablo",
+  "brain_transport": {
+    "method": "POST",
+    "path": "/v1/brain/{operation}",
+    "operations": [
+      "memory.search",
+      "memory.list",
+      "context.retrieve",
+      "continuity.start",
+      "continuity.append",
+      "continuity.recover",
+      "continuity.list",
+      "continuity.close",
+      "decision.record",
+      "memory.save",
+      "memory.change",
+      "memory.read",
+      "orient",
+      "next",
+      "next.respond"
+    ],
+    "arguments": "exact flat bc_* arguments",
+    "auth": "existing protected hermes-wa GT bearer",
+    "automatic_retry": false,
+    "native_loading_verified": false,
+    "live_enrollment_verified": false
+  },
+  "preimage_sha256": {
+    "hub_client.py": "4c36cbed242f5142773ce0bf3d58b8504eb47dfa50d85711f427a82c05c57cf2",
+    "plugin.py": "11b80c239ae4cc6e90ce3a94bc5d2a775bf3dd75d363d5868c36ca58ad73034f",
+    "plugin.yaml": "00534bc6f0ad989d8d0fc1893608a3472b649309d7f17a2ca157493dceaf20d2",
+    "skills/gremlin-town/SKILL.md": "c8d0164ea28cd1e445a099c9d1052bc117584f8370094233a8f2021e7bf48e34"
+  }
+}

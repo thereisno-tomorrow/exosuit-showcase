@@ -1,0 +1,22 @@
+files:
+  - vault: vault_career
+    path: intent.md
+    sha256: 2f2c3c6709f6f5245438e557a9b19b0d9a929fb5572b15b0456d998781bbd12c
+  - vault: vault_career
+    path: profile/career-record.md
+    sha256: 3f88fd108ef990717c499bf1b961b5ea5cfd605a2a5ecdae49edd37a1097b8e4
+  - vault: vault_career
+    path: profile/expertise.md
+    sha256: 67c3c7f0cd90dc26b33ceca242d4574676dc2bbaaeb4e9b55770cac1188bb699
+  - vault: vault_career
+    path: strategy/positioning.md
+    sha256: abf0b8540953c148407fc89110fa7f87c54d173d678accb64afdf36c0aecdb17
+  - vault: vault_career
+    path: materials/resumes/base-pmm.md
+    sha256: 3193e2d2618fb22356e66242576214c730226246c4c6ddd711ec784fe30fcd9c
+  - vault: vault_augmentus
+    path: intent.md
+    sha256: 2cc5336e6baf5173d6513c6891698874dcb3a4668b6eddde1a46a7574e8b8183
+  - vault: vault_augmentus
+    path: reference/jd-augmentus-marketing.md
+    sha256: 12a0c4a3f9fc4071d725255d23c2bfdf3507206282e3600826a2feeef738499d

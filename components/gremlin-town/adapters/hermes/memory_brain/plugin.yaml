@@ -1,0 +1,3 @@
+name: brain
+version: 0.2.0
+description: "Brain Home's read side for Diablo: Nic's open items and open where-I-stopped notes before each turn, one system-prompt line, and a compressed marker on this chat's open note. No automatic capture; Brain Core stays the one writer."

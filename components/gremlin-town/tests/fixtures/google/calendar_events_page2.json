@@ -1,0 +1,14 @@
+{
+  "kind": "calendar#events",
+  "items": [
+    {
+      "kind": "calendar#event",
+      "id": "evt-allday-1",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=evt-allday-1",
+      "summary": "Nic's birthday",
+      "start": {"date": "2026-09-27"},
+      "end": {"date": "2026-09-28"}
+    }
+  ]
+}

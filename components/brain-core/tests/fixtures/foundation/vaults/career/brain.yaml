@@ -1,0 +1,23 @@
+schema: brain.vault/v1
+id: vault_career
+name: Synthetic Career
+purpose: Invented candidate evidence for deterministic Brain Core tests
+topics:
+  - career-positioning
+  - product-marketing
+  - interview-evidence
+sensitivity: private
+sync_class: local-only
+default_branch: main
+intent: intent.md
+record_roots: []
+dependencies: []
+search:
+  paths:
+    - intent.md
+  purpose: ranking-only
+exports:
+  - name: orientation
+    paths:
+      - intent.md
+    max_bytes: 20000

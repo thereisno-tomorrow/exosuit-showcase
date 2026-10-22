@@ -1,0 +1,20 @@
+# Merge into the live config; never replace its other sections.
+[discord]
+enabled = false
+card = false
+delivery = false
+ask_diablo = false
+auto_tidy = false
+mail_pings = false
+diablo_home = false
+owner_id = ""
+owner_user_id = ""
+application_id = ""
+guild_id = ""
+morning_channel_id = ""
+home_channel_id = ""
+token_file = "/etc/gremlin-town/discord-review-token"
+state_file = "/var/lib/gremlin-town-brain/discord/card.sqlite3"
+# Optional installed custom emoji map and approved dashboard HTTPS address:
+# emoji_file = "/var/lib/gremlin-town-brain/discord/emoji.json"
+dashboard_url = ""

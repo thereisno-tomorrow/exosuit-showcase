@@ -1,0 +1,12 @@
+schema: brain.grant/v1
+id: grant_fixture-augmentus-exact
+issuer: synthetic-user
+authenticated_source: fixture://grants/source-message.txt
+source_message_sha256: f1b13ea5fec0e732d2ba1fe034f9f512ed8c1b01b42efca127644aca3be8db92
+session_id: synthetic-pilot-session
+operation: read
+vault: vault_augmentus
+paths:
+  - reference/jd-augmentus-marketing.md
+issued_at: "2026-01-01T00:00:00Z"
+expires_at: "2099-01-01T00:00:00Z"

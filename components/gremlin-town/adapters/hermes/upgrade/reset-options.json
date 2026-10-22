@@ -1,0 +1,30 @@
+{
+  "selected": "none (manual /new)",
+  "timezone": "Asia/Singapore",
+  "hour": 4,
+  "options": {
+    "plugin": {
+      "name": "hermes-session-reset-policy",
+      "version": "0.3.0",
+      "historical_commit_prefix": "bb618e0",
+      "state": "considered and rejected by Nic; do not install",
+      "settings": {
+        "mode": "daily",
+        "at_hour": 20,
+        "notify": true
+      },
+      "acceptance": "First user message after 20:00 UTC rotates an idle session; active turns finish; Brain block reloads; courier mirroring does not defer reset.",
+      "catalog_commit_prefix": "493df02"
+    },
+    "job": {
+      "schedule": "0 20 * * *",
+      "state": "rejected by Nic; do not install",
+      "command": "python upgrade/fresh_start.py --request --home <practice-home>",
+      "acceptance": "A supported gateway reset consumer must take the request once when idle, for Telegram/Discord and wake sessions, retaining review reply context."
+    },
+    "none": {
+      "state": "selected by Nic on 4 October 2026; no timed reset plugin or job",
+      "acceptance": "/new still works; session_reset.mode is none"
+    }
+  }
+}

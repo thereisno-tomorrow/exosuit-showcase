@@ -1,0 +1,176 @@
+# Canonical non-secret enrollment template. It is intentionally non-deployable
+# until every bearer REPLACE_* value is replaced with a distinct lowercase SHA-256.
+# chatgpt-web and claude-web below are commented OAuth proposals, not approved enrollments.
+# D18 (26 Sep): read_all_requests = true for chatgpt-web, claude-web, local-codex,
+# Diablo (hermes-wa) and Fleet Boss (fleet-boss-grok) — every agent can read every
+# request in a shared project; only the requester and recipient can reply to or
+# change one. Applying this to the live participants file is a morning-queue item.
+
+[[participant]]
+id = "local-codex"
+display_name = "Local Codex"
+role = "participant"
+enabled = true
+token_sha256 = "REPLACE_LOCAL_CODEX_WITH_64_LOWERCASE_HEX"
+address = "agenthub@example.invalid"
+projects = ["gremlin-town"]
+sensitivities = ["public-test", "internal"]
+read_all_requests = true
+
+[[participant]]
+id = "hermes-wa"
+display_name = "Hermes WA"
+role = "participant"
+enabled = true
+token_sha256 = "REPLACE_HERMES_WA_WITH_64_LOWERCASE_HEX"
+address = "agenthub@example.invalid"
+projects = ["gremlin-town"]
+sensitivities = ["public-test", "internal"]
+read_all_requests = true
+
+[[participant]]
+id = "fleet-boss-grok"
+display_name = "Fleet Boss Grok"
+role = "participant"
+enabled = false
+token_sha256 = "REPLACE_FLEET_BOSS_GROK_WITH_64_LOWERCASE_HEX"
+address = "agenthub@example.invalid"
+projects = ["gremlin-town"]
+sensitivities = ["public-test", "internal"]
+read_all_requests = true
+
+[[participant]]
+id = "demo-operator"
+display_name = "Demo Operator"
+role = "operator"
+enabled = true
+token_sha256 = "REPLACE_DEMO_OPERATOR_WITH_64_LOWERCASE_HEX"
+address = "agenthub@example.invalid"
+projects = ["gremlin-town"]
+sensitivities = ["public-test", "internal"]
+
+[[route]]
+project = "gremlin-town"
+source = "local-codex"
+destination = "hermes-wa"
+sensitivity = "public-test"
+
+[[route]]
+project = "gremlin-town"
+source = "hermes-wa"
+destination = "local-codex"
+sensitivity = "public-test"
+
+[[route]]
+project = "gremlin-town"
+source = "local-codex"
+destination = "fleet-boss-grok"
+sensitivity = "public-test"
+
+[[route]]
+project = "gremlin-town"
+source = "fleet-boss-grok"
+destination = "local-codex"
+sensitivity = "public-test"
+
+[[route]]
+project = "gremlin-town"
+source = "hermes-wa"
+destination = "fleet-boss-grok"
+sensitivity = "public-test"
+
+[[route]]
+project = "gremlin-town"
+source = "fleet-boss-grok"
+destination = "hermes-wa"
+sensitivity = "public-test"
+
+[[route]]
+project = "gremlin-town"
+source = "local-codex"
+destination = "hermes-wa"
+sensitivity = "internal"
+
+[[route]]
+project = "gremlin-town"
+source = "hermes-wa"
+destination = "local-codex"
+sensitivity = "internal"
+
+[[route]]
+project = "gremlin-town"
+source = "local-codex"
+destination = "fleet-boss-grok"
+sensitivity = "internal"
+
+[[route]]
+project = "gremlin-town"
+source = "fleet-boss-grok"
+destination = "local-codex"
+sensitivity = "internal"
+
+[[route]]
+project = "gremlin-town"
+source = "hermes-wa"
+destination = "fleet-boss-grok"
+sensitivity = "internal"
+
+[[route]]
+project = "gremlin-town"
+source = "fleet-boss-grok"
+destination = "hermes-wa"
+sensitivity = "internal"
+
+# Proposed initial ChatGPT scope only; approval required before uncommenting.
+# No operator role, bearer hash or internal access.
+# OAuth scopes gt:read/gt:write do not override project, sensitivity or route policy.
+# [[participant]]
+# id = "chatgpt-web"
+# display_name = "ChatGPT web"
+# role = "participant"
+# auth_mode = "oauth"
+# enabled = false
+# address = "agenthub@example.invalid"
+# projects = ["gremlin-town"]
+# sensitivities = ["public-test"]
+# read_all_requests = true
+
+# [[route]]
+# project = "gremlin-town"
+# source = "chatgpt-web"
+# destination = "local-codex"
+# sensitivity = "public-test"
+
+# [[route]]
+# project = "gremlin-town"
+# source = "local-codex"
+# destination = "chatgpt-web"
+# sensitivity = "public-test"
+
+# Proposed Claude connector (claude.ai, Claude Desktop and mobile on the same
+# account; Claude Code keeps local-codex, D23); approval required before uncommenting. Its own
+# identity: never reuse chatgpt-web. Mirror only the routes you approve for it.
+# A configured [[mcp.client]] whose participant is disabled stops startup, so
+# remove the client entry, not just this flag, to switch Claude off durably.
+# [[participant]]
+# id = "claude-web"
+# display_name = "Claude"
+# role = "participant"
+# auth_mode = "oauth"
+# enabled = true
+# address = "agenthub@example.invalid"
+# projects = ["gremlin-town"]
+# sensitivities = ["public-test"]
+# read_all_requests = true
+
+# [[route]]
+# project = "gremlin-town"
+# source = "claude-web"
+# destination = "local-codex"
+# sensitivity = "public-test"
+
+# [[route]]
+# project = "gremlin-town"
+# source = "local-codex"
+# destination = "claude-web"
+# sensitivity = "public-test"

@@ -1,0 +1,167 @@
+{
+  "canonicalization": "utf8-lf-yaml-key-order-as-written",
+  "catalog_id": "showcase-synthetic-ownership-v1",
+  "catalog_version": 1,
+  "constraints": {
+    "enforcement_is_not_canonical_truth": true,
+    "exactly_one_active_writer_generation": true,
+    "exactly_one_owner_per_responsibility": true,
+    "historical_owner_records_are_not_current_authority": true,
+    "interface_is_not_effect_executor": true,
+    "interface_is_not_permission_authority": true,
+    "project_template_requires_exact_project_id": true,
+    "writes_require_exact_owner_and_writer_generation": true,
+    "writes_require_matching_preimage_when_bound": true,
+    "writes_require_unexpired_generation": true
+  },
+  "owners": [
+    {
+      "active_writer": {
+        "expires_at": null,
+        "generation": 1,
+        "required_preimage_sha256": null,
+        "state": "active",
+        "valid_from": "2026-08-29T00:00:00+08:00",
+        "writer_locator": "vault://meta-vault"
+      },
+      "locator": "vault://meta-vault",
+      "owner_id": "metavault",
+      "owner_kind": "canonical_vault",
+      "responsibilities": [
+        "system_architecture",
+        "fleet_enrollment",
+        "system_admin_policy",
+        "migration_authority",
+        "audit_authority",
+        "recovery_planning",
+        "system_decisions",
+        "ciel_system_behavior",
+        "ciel_conformance",
+        "shared_vault_contracts",
+        "shared_lifecycle_invariants",
+        "ownership_enforcement",
+        "permission_enforcement",
+        "provenance_enforcement",
+        "record_validation",
+        "leased_content_access",
+        "effect_safety",
+        "bounded_resume",
+        "receipt_validation",
+        "ciel_interface"
+      ]
+    },
+    {
+      "active_writer": {
+        "expires_at": null,
+        "generation": 1,
+        "required_preimage_sha256": null,
+        "state": "active",
+        "valid_from": "2026-08-29T00:00:00+08:00",
+        "writer_locator": "vault://project/{project_id}"
+      },
+      "locator": "vault://project/{project_id}",
+      "owner_id": "project-vault",
+      "owner_kind": "parameterized_canonical_vault",
+      "parameter": {
+        "name": "project_id",
+        "pattern": "^[a-z0-9][a-z0-9-]{0,62}$",
+        "source": "explicit_request_scope"
+      },
+      "responsibilities": [
+        "project_domain_truth",
+        "project_decisions",
+        "project_commitments",
+        "project_intent",
+        "project_evidence",
+        "project_capabilities"
+      ]
+    },
+    {
+      "active_writer": {
+        "expires_at": null,
+        "generation": 1,
+        "required_preimage_sha256": null,
+        "state": "active",
+        "valid_from": "2026-08-29T00:00:00+08:00",
+        "writer_locator": "vault://brain-home"
+      },
+      "locator": "vault://brain-home",
+      "owner_id": "brain-home",
+      "owner_kind": "canonical_vault",
+      "responsibilities": [
+        "personal_memory",
+        "cross_project_memory",
+        "personal_preferences",
+        "personal_commitments",
+        "personal_continuity",
+        "personal_ciel_preferences"
+      ]
+    }
+  ],
+  "refusal_codes": {
+    "ambiguous_project": "ownership_ambiguous",
+    "duplicate_responsibility": "ownership_duplicate",
+    "expired_generation": "writer_generation_expired",
+    "multiple_active_writers": "writer_multiple",
+    "owner_mismatch": "writer_owner_mismatch",
+    "preimage_change": "writer_preimage_changed",
+    "stale_generation": "writer_generation_stale",
+    "unknown_responsibility": "ownership_unknown",
+    "zero_active_writers": "writer_absent"
+  },
+  "resolution_defaults": {
+    "ambiguous": "refuse",
+    "clock_source": "caller_supplied_utc",
+    "comparison": "ordinal",
+    "duplicate": "refuse",
+    "expired_generation": "refuse",
+    "multiple_active_writers": "refuse",
+    "owner_mismatch": "refuse",
+    "preimage_change": "refuse",
+    "stale_generation": "refuse",
+    "unknown": "refuse",
+    "zero_active_writers": "refuse"
+  },
+  "responsibility_keys": [
+    "system_architecture",
+    "fleet_enrollment",
+    "system_admin_policy",
+    "migration_authority",
+    "audit_authority",
+    "recovery_planning",
+    "system_decisions",
+    "ciel_system_behavior",
+    "ciel_conformance",
+    "personal_memory",
+    "cross_project_memory",
+    "personal_preferences",
+    "personal_commitments",
+    "personal_continuity",
+    "personal_ciel_preferences",
+    "project_domain_truth",
+    "project_decisions",
+    "project_commitments",
+    "project_intent",
+    "project_evidence",
+    "project_capabilities",
+    "shared_vault_contracts",
+    "shared_lifecycle_invariants",
+    "ownership_enforcement",
+    "permission_enforcement",
+    "provenance_enforcement",
+    "record_validation",
+    "leased_content_access",
+    "effect_safety",
+    "bounded_resume",
+    "receipt_validation",
+    "ciel_interface"
+  ],
+  "schema": "brain.ownership-catalog/v1",
+  "source_anchors": {
+    "governing_plan_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "prep_inventory_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "prep_packet_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "status": "active",
+  "system_authority_locator": "vault://meta-vault"
+}

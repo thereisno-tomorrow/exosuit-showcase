@@ -1,0 +1,13 @@
+{
+  "id": "msg-1",
+  "threadId": "thread-1",
+  "snippet": "Can you send the deck by Friday?",
+  "payload": {
+    "headers": [
+      {"name": "From", "value": "Sam <sam@example.test>"},
+      {"name": "To", "value": "Nic <nic@example.test>"},
+      {"name": "Subject", "value": "Deck for the board"},
+      {"name": "Date", "value": "Fri, 25 Sep 2026 09:00:00 +0800"}
+    ]
+  }
+}

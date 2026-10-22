@@ -1,0 +1,16 @@
+# Disabled until credentials, receiver prompts and activation cutoff are verified.
+enabled = false
+hub_config = "/etc/gremlin-town/config.toml"
+state_database = "/var/lib/gremlin-town-wake/wakes.sqlite3"
+activate_after = "2026-09-21T00:00:00+00:00" # replace at activation
+include_existing = [] # explicit reviewed request IDs only
+
+[[target]]
+participant_id = "hermes-wa"
+enabled = false
+kind = "hermes"
+url = "http://172.18.0.2:8644/webhooks/gremlin-town-wake" # inspect actual bridge IP
+secret_file = "/etc/gremlin-town-wake/hermes.secret"
+
+# Add fleet-boss-grok only after its native routine and generated authentication
+# contract have been reviewed in the routine panel. Do not guess those fields.

@@ -1,0 +1,29 @@
+# Keeping your place across agents
+
+An agent can answer a question and still leave the user with the coordination work: remembering a commitment, explaining it to another agent, finding the returned result and deciding where to resume.
+
+Exosuit explores a shared memory and handoff layer for that gap. Its product question is whether durable context and explicit work state can make a change of agent less costly.
+
+## The interaction
+
+A person saves a commitment. An agent receives a bounded request and returns an attributed result. The person checks the result, saves where they stopped and later asks what is next. A review assembles current records rather than treating an old chat summary as current truth.
+
+The repository contains the record, coordination and review machinery for this interaction. The local example demonstrates selected transitions using fictional work and a fake transport.
+
+## Three product choices
+
+**A saved idea should stay an idea.** The record and work model distinguish ideas, commitments and other kinds of work. A convenient capture interface should not silently turn every thought into an obligation.
+
+**A returned answer should carry evidence.** The coordination layer preserves attribution and delivery state. Canonical records preserve source/provenance fields. Neither a confident answer nor a provider's acceptance receipt establishes successful work.
+
+**Resuming should have a concrete next step.** Stopping notes, explicit dependencies and deterministic readers support “where was I?” and “what next?” without making the model the only holder of the state.
+
+## What this proves
+
+The engineering evidence is strongest around record boundaries, durable publication, request transitions and recoverable failures. The source also contains a substantial review flow and optional integrations. Current local checks are listed in [validation](validation.md).
+
+The project began as a personal system. This public snapshot does not establish broad adoption, improved productivity, clinical benefit or autonomous capture of everything said in a conversation. Capture still depends on an agent invoking the appropriate operation. The current research question is product usefulness over repeated ordinary use, not whether a large collection of tools can be connected.
+
+## What to improve next
+
+Reduce the size of central interpretation/storage modules, measure completion and recovery across repeated sessions, and test whether people can understand the review without learning the internal record model. Extend integration claims only when their account, delivery and real-use checks have been repeated.

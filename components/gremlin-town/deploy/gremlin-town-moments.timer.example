@@ -1,0 +1,10 @@
+# INACTIVE example; see gremlin-town-moments.service.example before enabling.
+[Unit]
+Description=Check for a right-moment return every 3 minutes (step E)
+
+[Timer]
+OnCalendar=*:0/3
+Persistent=false
+
+[Install]
+WantedBy=timers.target

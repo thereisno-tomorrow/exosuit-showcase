@@ -1,0 +1,25 @@
+[Unit]
+Description=Gremlin Town automatic recipient wake notifications
+After=network-online.target gremlin-town.service docker.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=gremlin-town
+Group=gremlin-town
+ExecStart=/opt/gremlin-town/current/.venv/bin/python /opt/gremlin-town-wake/worker.py --config /etc/gremlin-town-wake/wake.toml
+Restart=on-failure
+RestartSec=15
+StateDirectory=gremlin-town-wake
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadOnlyPaths=/var/lib/gremlin-town /etc/gremlin-town /etc/gremlin-town-wake /opt/gremlin-town-wake
+ReadWritePaths=/var/lib/gremlin-town-wake
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+LimitNOFILE=128
+
+[Install]
+WantedBy=multi-user.target

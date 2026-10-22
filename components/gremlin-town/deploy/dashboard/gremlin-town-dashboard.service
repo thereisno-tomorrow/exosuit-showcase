@@ -1,0 +1,35 @@
+[Unit]
+Description=Exosuit owner dashboard
+After=network-online.target gremlin-town.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=gremlin-town
+Group=gremlin-town
+WorkingDirectory=/opt/gremlin-town/current
+EnvironmentFile=/etc/gremlin-town/service.env
+Environment=GT_AGENTMAIL_API_KEY_FILE=%d/agentmail_api_key
+LoadCredential=agentmail_api_key:/etc/gremlin-town/agentmail-api-key
+Environment=GT_DASHBOARD_SESSION_SECRET_FILE=%d/dashboard_session
+LoadCredential=dashboard_session:/etc/gremlin-town/dashboard-session
+ExecStart=/opt/gremlin-town/current/.venv/bin/gremlin-town dashboard serve --config /etc/gremlin-town/config.toml
+# A failure is held for inspection under the mega-build hub rules.
+Restart=no
+TimeoutStopSec=30s
+UMask=0077
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
+ReadWritePaths=/var/lib/gremlin-town
+ReadWritePaths=-/var/lib/gremlin-town-oauth
+
+[Install]
+WantedBy=multi-user.target

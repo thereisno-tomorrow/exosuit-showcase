@@ -1,0 +1,13 @@
+{
+  "schema": "gt.host-preparation/v1",
+  "status": "candidate",
+  "markdown_paths": [
+    "shared/CONTRACT.md",
+    "example_orientation/ORIENTATION.md",
+    "chatgpt/HOST.md",
+    "codex/HOST.md",
+    "hermes/HOST.md",
+    "grok/HOST.md",
+    "grok/GATEWAY.md"
+  ]
+}

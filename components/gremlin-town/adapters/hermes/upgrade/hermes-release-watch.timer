@@ -1,0 +1,10 @@
+[Unit]
+Description=Fortnightly Hermes release check (durable due-date gate)
+
+[Timer]
+OnCalendar=*-*-* 09:00:00 Asia/Singapore
+Persistent=true
+Unit=hermes-release-watch.service
+
+[Install]
+WantedBy=timers.target

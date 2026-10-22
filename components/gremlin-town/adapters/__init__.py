@@ -1,0 +1,1 @@
+"""Permanent participant adapters."""

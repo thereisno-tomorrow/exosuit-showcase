@@ -1,0 +1,374 @@
+{
+  "schema": "work-model.messages/v1",
+  "timezone": "Asia/Singapore",
+  "messages": [
+    {
+      "id": "M01",
+      "category": "synthetic_message",
+      "message": "Yeah, I started the exhibition's permit already, I basically texted my coordinator, but what's next is I have to get a safety checklist from the inspector on my venue inspection on 8 October, and then officially submit my permit along with the memo on Exhibit Portal.",
+      "said_at_sgt": "2026-09-30T11:50:00+08:00",
+      "source": "fixture://synthetic-exhibition/M01",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "M02",
+      "category": "synthetic_message",
+      "message": "need to pay venue invoice",
+      "said_at_sgt": null,
+      "source": "fixture://synthetic-exhibition/M02",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "M03",
+      "category": "synthetic_message",
+      "message": "send Morgan my brief today + separately also plan out an outreach campaign",
+      "said_at_sgt": null,
+      "source": "fixture://synthetic-exhibition/M03",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "M04",
+      "category": "synthetic_message",
+      "message": "I need to edit my brief before I send to Morgan",
+      "said_at_sgt": null,
+      "source": "fixture://synthetic-exhibition/M04",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "M05",
+      "category": "synthetic_message",
+      "message": "Board for Workshop done",
+      "said_at_sgt": null,
+      "source": "fixture://synthetic-exhibition/M05",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "M06",
+      "category": "synthetic_message",
+      "message": "Sketch board cancelled",
+      "said_at_sgt": null,
+      "source": "fixture://synthetic-exhibition/M06",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "M07",
+      "category": "synthetic_message",
+      "message": "Tomorrow I'm going to look at Board for Workshop",
+      "said_at_sgt": "2026-09-30T00:10:00+08:00",
+      "source": "fixture://synthetic-exhibition/M07",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "M08",
+      "category": "synthetic_message",
+      "message": "today I'm going to focus on the two atlas things",
+      "said_at_sgt": null,
+      "source": "fixture://synthetic-exhibition/M08",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "M09",
+      "category": "synthetic_message",
+      "message": "Lark, not luck",
+      "said_at_sgt": null,
+      "source": "fixture://synthetic-exhibition/M09",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "M10",
+      "category": "synthetic_message",
+      "message": "No Morgan is correct",
+      "said_at_sgt": null,
+      "source": "fixture://synthetic-exhibition/M10",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "R01",
+      "category": "recall_prompt",
+      "message": "whats the next step on my exhibition permit",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/R01",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "R02",
+      "category": "recall_prompt",
+      "message": "what do i need to do about my exhibition registration",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/R02",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "R03",
+      "category": "recall_prompt",
+      "message": "did i ever sort out pausing my hall rental payments",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/R03",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "R04",
+      "category": "recall_prompt",
+      "message": "what was that insurance thing i had to do",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/R04",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "R05",
+      "category": "recall_prompt",
+      "message": "remind me what the phone thing was",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/R05",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "R06",
+      "category": "recall_prompt",
+      "message": "was there some app subscription i was meant to check",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/R06",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "R07",
+      "category": "recall_prompt",
+      "message": "what have i got on today",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/R07",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "R08",
+      "category": "recall_prompt",
+      "message": "im heading out now, anything i should do while im out",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/R08",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "R09",
+      "category": "recall_prompt",
+      "message": "got 15 mins free, whats something quick",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/R09",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "R10",
+      "category": "recall_prompt",
+      "message": "hows my job hunt going",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/R10",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "R11",
+      "category": "recall_prompt",
+      "message": "whats still left on my big admin list",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/R11",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "R12",
+      "category": "recall_prompt",
+      "message": "did i pay the internet bill already",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/R12",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "R13",
+      "category": "recall_prompt",
+      "message": "what was i going to look into for my agent setup",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/R13",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "R14",
+      "category": "recall_prompt",
+      "message": "anything im forgetting this week",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/R14",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "R15",
+      "category": "recall_prompt",
+      "message": "how should i structure a cover letter for a PM role",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/R15",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "S01",
+      "category": "save_prompt",
+      "message": "oh btw i need to renew my passport before december",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/S01",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "S01b",
+      "category": "save_prompt",
+      "message": "actually lets say end of november for the passport",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/S01b",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "S02",
+      "category": "save_prompt",
+      "message": "can you remind me to call the dentist next tues after lunch",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/S02",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "S03",
+      "category": "save_prompt",
+      "message": "had an amazing laksa for lunch lol",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/S03",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "S04",
+      "category": "save_prompt",
+      "message": "rowan said she'll send the hall forms over by friday",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/S04",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "S05",
+      "category": "save_prompt",
+      "message": "i told sam i'd send him the wedding photos this weekend",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/S05",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "S06",
+      "category": "save_prompt",
+      "message": "maybe one day i should learn to make fresh pasta",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/S06",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "S07",
+      "category": "save_prompt",
+      "message": "fwd from morgan: \"…send over your portfolio by Thursday…\"",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/S07",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    },
+    {
+      "id": "S08",
+      "category": "save_prompt",
+      "message": "whats a good dried pasta brand",
+      "said_at_sgt": null,
+      "run_window_sgt": [
+        "2026-09-30T11:35:00+08:00",
+        "2026-09-30T11:46:00+08:00"
+      ],
+      "source": "fixture://synthetic-exhibition/S08",
+      "provenance": "Invented exhibition scenario; no personal message or live record."
+    }
+  ]
+}

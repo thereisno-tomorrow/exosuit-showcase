@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "component": "hermes-brain-memory-provider",
+  "provider_name": "brain",
+  "spec": "docs/product/steps/g-damien-hooks.md",
+  "install_root": "/opt/data/plugins/brain",
+  "host_backing_root": "/srv/hermes-example/plugins/brain",
+  "hub_runtime_reference": "/opt/gremlin-town/current",
+  "preimage": "absent: /opt/data/plugins/brain does not exist before the first install",
+  "preimage_sha256": {
+    "provider.py": "756100b5988200936e506908b08f284321597f7e850c7e7c7c1a0a7ac91fc6b1",
+    "__init__.py": "63f4be00579c5ca3274c901e2f364edbfdca32815c2f6af02c22b795a226bb04",
+    "hub_client.py": "4c36cbed242f5142773ce0bf3d58b8504eb47dfa50d85711f427a82c05c57cf2"
+  },
+  "files": [
+    {
+      "source": "adapters/hermes/memory_brain/__init__.py",
+      "destination": "/opt/data/plugins/brain/__init__.py",
+      "mode": "0644",
+      "sha256": "61fb2947fac7d1cc2a232c165f2550cf5102802f36dc2c4ba778a0f0b1141389"
+    },
+    {
+      "source": "adapters/hermes/memory_brain/provider.py",
+      "destination": "/opt/data/plugins/brain/provider.py",
+      "mode": "0644",
+      "sha256": "49258b5ab952202fa7aacb079b79a6fea9e8cfe1df46cf9fd0fa8a9f0bf83307"
+    },
+    {
+      "source": "adapters/hermes/hub_client.py",
+      "destination": "/opt/data/plugins/brain/hub_client.py",
+      "mode": "0644",
+      "sha256": "6120dbd41326a23aead881bc413c8f9fd09fe5cebfda15856ae7b62c45eb726a"
+    },
+    {
+      "source": "adapters/hermes/memory_brain/plugin.yaml",
+      "destination": "/opt/data/plugins/brain/plugin.yaml",
+      "mode": "0644",
+      "sha256": "3ceb23bfb3076bf024d94dd19fdd79353a276b5868c87931b89a80df5e82a4d4"
+    },
+    {
+      "source": "adapters/hermes/memory_brain/settings.json",
+      "destination": "/opt/data/plugins/brain/settings.json",
+      "mode": "0644",
+      "sha256": "f57bf19a9ef31828fb632e53d6d31a14b849a966772801a01166ee8d3f13ad80"
+    }
+  ],
+  "not_installed": [
+    "adapters/hermes/memory_brain/hub_client.py (repository bridge to adapters/hermes/hub_client.py)",
+    "adapters/hermes/memory_brain/install-manifest.json"
+  ],
+  "runtime_config": {
+    "activation": "memory.provider: brain in /opt/data/config.yaml (host /srv/hermes-example/config.yaml); not in plugins.enabled",
+    "non_secret_settings": "/opt/data/plugins/brain/settings.json",
+    "optional_settings": "/opt/data/brain.json: {\"prefetch\", \"preferences\", \"idle_marker\": \"on\" | \"off\"}; no file, or a setting left out, means on",
+    "prefetch_log": "/opt/data/brain-prefetch.log (host /srv/hermes-example/brain-prefetch.log): one JSON line per failed or skipped read; created 0600, O_APPEND; appears with the first failure",
+    "outbox": "/opt/data/brain-outbox.jsonl (host /srv/hermes-example/brain-outbox.jsonl): one JSON line per marker a transport error kept from the hub; created 0600, O_APPEND; sent again after the next read that works; exists only while something waits",
+    "endpoint_env_override": "GREMLIN_TOWN_HUB_URL",
+    "accepted_token_sources": [
+      "GREMLIN_TOWN_HUB_TOKEN",
+      "GREMLIN_TOWN_HUB_TOKEN_FILE"
+    ],
+    "token_file_requirement": "the existing hermes-wa GT bearer file; absolute regular file; runtime-owned; parent 0700; file 0600; no new secret"
+  },
+  "brain_reads": [
+    "memory.list",
+    "continuity.list"
+  ],
+  "brain_writes": [
+    "continuity.append"
+  ],
+  "requires": "a hub release with memory.list kind=preference first (memory follow-ons P1); an older hub refuses the preference read as invalid arguments, and every block is then the not-reachable line until the hub is updated or preferences is set off",
+  "network_or_install_effects": false,
+  "package_version": "0.2.0",
+  "participant_id": "hermes-wa",
+  "display_name": "Diablo",
+  "native_loading_verified": false,
+  "live_enrollment_verified": false
+}

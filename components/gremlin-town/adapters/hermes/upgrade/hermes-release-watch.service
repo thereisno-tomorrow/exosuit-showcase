@@ -1,0 +1,15 @@
+[Unit]
+Description=Read-only Hermes release check for Nic
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/hermes-upgrade/release-watch/release_watch.py --root /opt/hermes-upgrade/release-watch
+TimeoutStartSec=150
+UMask=0077
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/opt/hermes-upgrade/release-watch
+PrivateTmp=true

@@ -1,0 +1,50 @@
+# INACTIVE example; installing gremlin-town.service does not install this unit.
+# Step H, the one-way Notion view (docs/product/steps/h-notion-view.md §7).
+# Requires [notion_view] enabled = true with database_id and state_file set,
+# the Notion key at /etc/gremlin-town/notion-token (root, 0600), the database
+# shared with the integration, and `gremlin-town notion-view sync --dry-run`
+# then `sync` by hand first. Stopping it leaves Notion as it was; nothing in
+# Brain Home is ever written.
+[Unit]
+Description=Exosuit Notion view: copy Brain Home's items to Notion (step H)
+After=gremlin-town.service
+
+[Service]
+Type=simple
+User=gremlin-town
+Group=gremlin-town
+WorkingDirectory=/opt/gremlin-town/current
+# The same environment and credentials as gremlin-town.service: reading Brain
+# Home needs its GitHub credentials, and building the runtime opens the store.
+EnvironmentFile=/etc/gremlin-town/service.env
+LoadCredential=github_messages_token:/etc/gremlin-town/github-messages-token
+Environment=GT_GITHUB_TOKEN_FILE=%d/github_messages_token
+LoadCredential=github_app_key:/etc/gremlin-town/github-app-gt.pem
+Environment=GT_GITHUB_APP_KEY_FILE=%d/github_app_key
+# With [google] in the config (on since 29 Sep), building the runtime also needs
+# the Google credential, or it stops with "GT_GOOGLE_CREDENTIAL_FILE" missing.
+LoadCredential=google_credential:/etc/gremlin-town/google-credential.json
+Environment=GT_GOOGLE_CREDENTIAL_FILE=%d/google_credential
+LoadCredential=notion_token:/etc/gremlin-town/notion-token
+Environment=GT_NOTION_TOKEN_FILE=%d/notion_token
+ExecStart=/opt/gremlin-town/current/.venv/bin/gremlin-town notion-view watch --config /etc/gremlin-town/config.toml
+Restart=on-failure
+RestartSec=30
+UMask=0077
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
+ReadWritePaths=/var/lib/gremlin-town /var/lib/gremlin-town-brain
+# Building the runtime opens the sign-in store too, as gremlin-town.service does;
+# without this it stops with "attempt to write a readonly database" (29 Sep).
+ReadWritePaths=-/var/lib/gremlin-town-oauth
+
+[Install]
+WantedBy=multi-user.target

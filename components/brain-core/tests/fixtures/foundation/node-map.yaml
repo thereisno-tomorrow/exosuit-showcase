@@ -1,0 +1,9 @@
+schema: brain.node-map/v1
+node: synthetic-local
+vaults:
+  - id: vault_career
+    root: vaults/career
+    manifest: brain.yaml
+  - id: vault_augmentus
+    root: vaults/augmentus
+    manifest: brain.yaml

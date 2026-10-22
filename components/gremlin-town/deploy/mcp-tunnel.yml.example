@@ -1,0 +1,15 @@
+# INACTIVE example: locally managed named tunnel, never a quick/random tunnel.
+# Domain purchased through Cloudflare; zone/nameservers and hostname NOT verified.
+# Install only under separately authorized deployment as /etc/cloudflared-gt/config.yml.
+tunnel: REPLACE_WITH_TUNNEL_UUID
+credentials-file: /etc/cloudflared-gt/tunnel-credentials.json
+
+ingress:
+  - hostname: gateway.example.invalid
+    service: http://127.0.0.1:8769
+    originRequest:
+      httpHostHeader: gateway.example.invalid
+  - service: http_status:404
+
+# 8769 serves ONLY MCP + public OAuth protocol routes, never the private app.
+# Do not add 8765, 8766, fixture 8767/8768 or recovery 8770 to this tunnel.

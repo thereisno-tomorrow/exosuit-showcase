@@ -1,0 +1,2 @@
+# Preserve the hub copy byte for byte: the toggle checks its SHA-256 before patching.
+google_api.py -text

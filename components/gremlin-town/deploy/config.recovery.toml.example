@@ -1,0 +1,26 @@
+# Standalone restore configuration; never merge in the live [mcp] table.
+# Port 8770 is an example; verify availability before an approved drill.
+[server]
+host = "127.0.0.1"
+port = 8770
+database = "/var/lib/gremlin-town/recovery.sqlite3"
+operator_only = true
+
+[agentmail]
+base_url = "https://api.agentmail.to"
+inbox_id = "agenthub@example.invalid"
+api_key_file_env = "GT_AGENTMAIL_API_KEY_FILE"
+
+[recovery]
+normal_clients_allowed = false
+outbound_dispatch_allowed = false
+mcp_allowed = false
+
+[mcp]
+enabled = false
+
+[brain_core]
+enabled = false
+
+[participants]
+file = "/etc/gremlin-town/participants.toml"

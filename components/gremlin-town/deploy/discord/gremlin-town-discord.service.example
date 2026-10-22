@@ -1,0 +1,39 @@
+# INACTIVE. Review the install sheet before installing or enabling this unit.
+# Outbound Discord connection only; no public listener or second GT worker.
+[Unit]
+Description=Exosuit morning card connection
+After=network-online.target gremlin-town.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=gremlin-town
+Group=gremlin-town
+WorkingDirectory=/opt/gremlin-town/current
+EnvironmentFile=/etc/gremlin-town/service.env
+LoadCredential=github_messages_token:/etc/gremlin-town/github-messages-token
+Environment=GT_GITHUB_TOKEN_FILE=%d/github_messages_token
+LoadCredential=github_app_key:/etc/gremlin-town/github-app-gt.pem
+Environment=GT_GITHUB_APP_KEY_FILE=%d/github_app_key
+LoadCredential=discord_review_token:/etc/gremlin-town/discord-review-token
+Environment=GT_DISCORD_TOKEN_FILE=%d/discord_review_token
+ExecStart=/opt/gremlin-town/current/.venv/bin/gremlin-town discord serve --config /etc/gremlin-town/config.toml
+# Unexpected failures require inspection; do not hide them in a restart loop.
+Restart=no
+TimeoutStopSec=90
+UMask=0077
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
+ReadWritePaths=/var/lib/gremlin-town /var/lib/gremlin-town-brain
+ReadWritePaths=-/var/lib/gremlin-town-oauth
+
+[Install]
+WantedBy=multi-user.target

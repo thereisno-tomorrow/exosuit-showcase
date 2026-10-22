@@ -1,0 +1,23 @@
+{
+  "kind": "calendar#events",
+  "nextPageToken": "page-2-token",
+  "items": [
+    {
+      "kind": "calendar#event",
+      "id": "evt-timed-1",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=evt-timed-1",
+      "summary": "Dentist",
+      "location": "123 Orchard Rd",
+      "start": {"dateTime": "2026-09-26T15:00:00+08:00", "timeZone": "Asia/Singapore"},
+      "end": {"dateTime": "2026-09-26T15:30:00+08:00", "timeZone": "Asia/Singapore"}
+    },
+    {
+      "kind": "calendar#event",
+      "id": "evt-cancelled-1",
+      "status": "cancelled",
+      "htmlLink": "https://www.google.com/calendar/event?eid=evt-cancelled-1",
+      "summary": "Cancelled sync"
+    }
+  ]
+}

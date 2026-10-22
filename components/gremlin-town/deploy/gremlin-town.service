@@ -1,0 +1,37 @@
+[Unit]
+Description=Gremlin Town coordination hub
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=gremlin-town
+Group=gremlin-town
+WorkingDirectory=/opt/gremlin-town/current
+EnvironmentFile=/etc/gremlin-town/service.env
+Environment=GT_AGENTMAIL_API_KEY_FILE=%d/agentmail_api_key
+LoadCredential=agentmail_api_key:/etc/gremlin-town/agentmail-api-key
+ExecStart=/opt/gremlin-town/current/.venv/bin/gremlin-town serve --config /etc/gremlin-town/config.toml --host 127.0.0.1 --port 8765
+Restart=on-failure
+RestartSec=5s
+TimeoutStopSec=30s
+UMask=0077
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
+ReadWritePaths=/var/lib/gremlin-town
+# Optional while MCP is disabled. Provision this separate directory as 0700,
+# owned by gremlin-town, before enabling MCP. Never include it in work backups.
+ReadWritePaths=-/var/lib/gremlin-town-oauth
+# mcp-client-secret is read-only at the path in config.toml (root:gremlin-town 0640).
+# No mandatory OAuth LoadCredential: disabled MCP needs no OAuth secret or store.
+
+[Install]
+WantedBy=multi-user.target

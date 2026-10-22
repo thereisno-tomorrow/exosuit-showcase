@@ -1,0 +1,13 @@
+# INACTIVE. Proposed 05:30 Singapore; keep this in step with [review] names_at.
+# Never catch up a missed run after 06:00 or order the review behind this unit.
+[Unit]
+Description=Ask Diablo for review names before 06:00
+
+[Timer]
+OnCalendar=*-*-* 21:30:00 UTC
+Persistent=false
+AccuracySec=1s
+Unit=gremlin-town-review-names.service
+
+[Install]
+WantedBy=timers.target

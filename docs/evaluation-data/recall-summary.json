@@ -1,0 +1,179 @@
+{
+  "experiment_date": "2026-10-05",
+  "scope": "Historical hand-authored synthetic held-out retrieval comparison; not rerun for this public snapshot. No generated-answer benchmark.",
+  "arms": {
+    "A": "current search",
+    "B": "FTS5 keyword",
+    "C": "keyword and meaning"
+  },
+  "metrics": {
+    "A": {
+      "absent": {
+        "n": 10,
+        "hit1": 0,
+        "hit5": 0,
+        "all_required": 0,
+        "no_answer": 0,
+        "mean_precision": 0.0,
+        "source_invalid": 0
+      },
+      "alias": {
+        "n": 10,
+        "hit1": 10,
+        "hit5": 10,
+        "all_required": 0,
+        "no_answer": 0,
+        "mean_precision": 0.2,
+        "source_invalid": 0
+      },
+      "current": {
+        "n": 10,
+        "hit1": 7,
+        "hit5": 10,
+        "all_required": 0,
+        "no_answer": 0,
+        "mean_precision": 0.2,
+        "source_invalid": 0
+      },
+      "exact": {
+        "n": 10,
+        "hit1": 10,
+        "hit5": 10,
+        "all_required": 0,
+        "no_answer": 0,
+        "mean_precision": 0.44333333333333336,
+        "source_invalid": 0
+      },
+      "multi": {
+        "n": 10,
+        "hit1": 10,
+        "hit5": 10,
+        "all_required": 10,
+        "no_answer": 0,
+        "mean_precision": 0.4,
+        "source_invalid": 0
+      },
+      "paraphrase": {
+        "n": 10,
+        "hit1": 0,
+        "hit5": 4,
+        "all_required": 0,
+        "no_answer": 0,
+        "mean_precision": 0.08,
+        "source_invalid": 0
+      }
+    },
+    "B": {
+      "absent": {
+        "n": 10,
+        "hit1": 0,
+        "hit5": 0,
+        "all_required": 0,
+        "no_answer": 1,
+        "mean_precision": 0.0,
+        "source_invalid": 0
+      },
+      "alias": {
+        "n": 10,
+        "hit1": 10,
+        "hit5": 10,
+        "all_required": 0,
+        "no_answer": 0,
+        "mean_precision": 1.0,
+        "source_invalid": 0
+      },
+      "current": {
+        "n": 10,
+        "hit1": 10,
+        "hit5": 10,
+        "all_required": 0,
+        "no_answer": 0,
+        "mean_precision": 0.67,
+        "source_invalid": 0
+      },
+      "exact": {
+        "n": 10,
+        "hit1": 10,
+        "hit5": 10,
+        "all_required": 0,
+        "no_answer": 0,
+        "mean_precision": 0.47333333333333333,
+        "source_invalid": 0
+      },
+      "multi": {
+        "n": 10,
+        "hit1": 10,
+        "hit5": 10,
+        "all_required": 10,
+        "no_answer": 0,
+        "mean_precision": 0.5933333333333334,
+        "source_invalid": 0
+      },
+      "paraphrase": {
+        "n": 10,
+        "hit1": 2,
+        "hit5": 4,
+        "all_required": 0,
+        "no_answer": 3,
+        "mean_precision": 0.17857142857142858,
+        "source_invalid": 0
+      }
+    },
+    "C": {
+      "absent": {
+        "n": 10,
+        "hit1": 0,
+        "hit5": 0,
+        "all_required": 0,
+        "no_answer": 0,
+        "mean_precision": 0.0,
+        "source_invalid": 0
+      },
+      "alias": {
+        "n": 10,
+        "hit1": 10,
+        "hit5": 10,
+        "all_required": 0,
+        "no_answer": 0,
+        "mean_precision": 0.2,
+        "source_invalid": 0
+      },
+      "current": {
+        "n": 10,
+        "hit1": 10,
+        "hit5": 10,
+        "all_required": 0,
+        "no_answer": 0,
+        "mean_precision": 0.2,
+        "source_invalid": 0
+      },
+      "exact": {
+        "n": 10,
+        "hit1": 10,
+        "hit5": 10,
+        "all_required": 0,
+        "no_answer": 0,
+        "mean_precision": 0.22,
+        "source_invalid": 0
+      },
+      "multi": {
+        "n": 10,
+        "hit1": 10,
+        "hit5": 10,
+        "all_required": 10,
+        "no_answer": 0,
+        "mean_precision": 0.4,
+        "source_invalid": 0
+      },
+      "paraphrase": {
+        "n": 10,
+        "hit1": 6,
+        "hit5": 9,
+        "all_required": 0,
+        "no_answer": 0,
+        "mean_precision": 0.18000000000000002,
+        "source_invalid": 0
+      }
+    }
+  }
+}

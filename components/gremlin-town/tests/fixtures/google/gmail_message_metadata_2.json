@@ -1,0 +1,13 @@
+{
+  "id": "msg-2",
+  "threadId": "thread-2",
+  "snippet": "Your flight is confirmed for October 3rd.",
+  "payload": {
+    "headers": [
+      {"name": "From", "value": "Airline Notifications <no-reply@airline.example>"},
+      {"name": "To", "value": "Nic <nic@example.test>"},
+      {"name": "Subject", "value": "Booking confirmed"},
+      {"name": "Date", "value": "Fri, 25 Sep 2026 10:00:00 +0800"}
+    ]
+  }
+}

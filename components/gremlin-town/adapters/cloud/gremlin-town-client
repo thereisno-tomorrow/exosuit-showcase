@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+"""Installed launcher for the minimal Grok/cloud participant client tree."""
+
+from pathlib import Path
+import sys
+
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from gremlin_town_client.client import main  # noqa: E402
+
+
+raise SystemExit(main())

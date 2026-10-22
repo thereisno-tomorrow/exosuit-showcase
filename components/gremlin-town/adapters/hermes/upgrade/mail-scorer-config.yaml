@@ -1,0 +1,26 @@
+{
+  "model": {
+    "provider": "openai-codex",
+    "default": "gpt-6-luna"
+  },
+  "platform_toolsets": {
+    "cli": []
+  },
+  "memory": {
+    "provider": "none"
+  },
+  "agent": {
+    "coding_context": "off"
+  },
+  "plugins": {
+    "entries": {}
+  },
+  "auxiliary": {
+    "background_review": {
+      "enabled": false
+    }
+  },
+  "model_catalog": {
+    "enabled": false
+  }
+}

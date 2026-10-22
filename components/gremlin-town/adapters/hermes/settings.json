@@ -1,0 +1,4 @@
+{
+  "hub_url": "https://hub.example.invalid",
+  "token_file": "/opt/data/secrets/gremlin-town.token"
+}

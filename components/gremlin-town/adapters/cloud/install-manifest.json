@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "component": "grok-shared-cloud-client",
+  "install_root": "/home/box/gremlin-town-client",
+  "hub_runtime_reference": "/opt/gremlin-town/current",
+  "python": "/usr/bin/python3",
+  "directories": [
+    {"path": "/home/box/gremlin-town-client", "mode": "0700"},
+    {"path": "/home/box/gremlin-town-client/bin", "mode": "0700"},
+    {"path": "/home/box/gremlin-town-client/gremlin_town_client", "mode": "0700"},
+    {"path": "/home/box/.config/gremlin-town", "mode": "0700"}
+  ],
+  "files": [
+    {
+      "source": "adapters/cloud/__init__.py",
+      "destination": "/home/box/gremlin-town-client/gremlin_town_client/__init__.py",
+      "mode": "0600"
+    },
+    {
+      "source": "adapters/cloud/__main__.py",
+      "destination": "/home/box/gremlin-town-client/gremlin_town_client/__main__.py",
+      "mode": "0600"
+    },
+    {
+      "source": "adapters/cloud/client.py",
+      "destination": "/home/box/gremlin-town-client/gremlin_town_client/client.py",
+      "mode": "0600"
+    },
+    {
+      "source": "adapters/hermes/hub_client.py",
+      "destination": "/home/box/gremlin-town-client/gremlin_town_client/hub_client.py",
+      "mode": "0600"
+    },
+    {
+      "source": "adapters/cloud/client-settings.json",
+      "destination": "/home/box/gremlin-town-client/gremlin_town_client/client-settings.json",
+      "mode": "0600"
+    },
+    {
+      "source": "adapters/cloud/gremlin-town-client",
+      "destination": "/home/box/gremlin-town-client/bin/gremlin-town-client",
+      "mode": "0700"
+    }
+  ],
+  "runtime_config": {
+    "endpoint_env": "GREMLIN_TOWN_HUB_URL",
+    "token_env": "GREMLIN_TOWN_HUB_TOKEN",
+    "token_file_env": "GREMLIN_TOWN_HUB_TOKEN_FILE",
+    "default_token_file": "/home/box/.config/gremlin-town/grok.token",
+    "token_file_mode": "0600",
+    "token_directory_mode": "0700",
+    "credential_scope": "shared-cloud-installation-not-bot-isolation",
+    "optional_features_settings": "/home/box/gremlin-town-client/gremlin_town_client/client-settings.json",
+    "optional_features_default": "enabled_optional_features: [] (orient, next and next.respond refused until 'orientation' is named there; calendar.remove until 'calendar' is)"
+  },
+  "network_or_install_effects": false
+}

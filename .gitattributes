@@ -1,0 +1,5 @@
+# Preserve exact fixture and adapter bytes: integrity manifests pin their hashes.
+# Editors may use either line ending; commits and checkouts must not rewrite them.
+* -text
+# Packaged adapter manifests intentionally hash canonical LF source bytes.
+components/gremlin-town/adapters/** text eol=lf

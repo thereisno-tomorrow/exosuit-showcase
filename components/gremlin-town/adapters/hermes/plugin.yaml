@@ -1,0 +1,42 @@
+name: gremlin-town
+version: 1.6.0
+description: Diablo authenticated GT handoffs and shared Brain executive-memory tools
+author: Nic
+kind: standalone
+requires_env: []
+optional_env:
+  - GREMLIN_TOWN_HUB_URL
+  - GREMLIN_TOWN_HUB_TOKEN
+  - GREMLIN_TOWN_HUB_TOKEN_FILE
+provides_tools:
+  - gremlin_town_participants_list
+  - gremlin_town_requests_create
+  - gremlin_town_requests_list
+  - gremlin_town_requests_read
+  - gremlin_town_requests_report
+  - gremlin_town_requests_reply
+  - gremlin_town_requests_cancel
+  - gremlin_town_requests_check
+  - gremlin_town_operations_get
+  - gremlin_town_events_list
+  - bc_memory_search
+  - bc_memory_list
+  - bc_context_retrieve
+  - bc_continuity_start
+  - bc_continuity_append
+  - bc_continuity_recover
+  - bc_continuity_list
+  - bc_continuity_close
+  - bc_decision_record
+  - bc_memory_save
+  - bc_memory_change
+  - bc_memory_read
+  - bc_orient
+  - bc_next
+  - bc_next_respond
+  - bc_agenda
+  - bc_weekly
+  - bc_calendar_remove
+  - bc_work
+  - gremlin_town_review_respond
+  - gremlin_town_moments_signal

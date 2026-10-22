@@ -1,0 +1,11 @@
+# INACTIVE example; installing gremlin-town.service does not install this unit.
+# See gremlin-town-review.service.example before enabling.
+[Unit]
+Description=Send the Exosuit 06:00 review daily (step E)
+
+[Timer]
+OnCalendar=*-*-* 22:00:00 UTC
+Persistent=true
+
+[Install]
+WantedBy=timers.target

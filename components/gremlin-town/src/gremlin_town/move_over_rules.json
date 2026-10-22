@@ -1,0 +1,217 @@
+{
+  "schema": "work.move-over-rules/v1",
+  "rows": [
+    {
+      "id": "brn_20260930_035026_d000000000000028",
+      "source": "fixture://synthetic-exhibition",
+      "memo_row": 1,
+      "fields": {
+        "labels": [
+          "exhibition admin"
+        ]
+      },
+      "remove_length": true,
+      "started": true,
+      "questions": [
+        "Its finish line, in your words?"
+      ],
+      "officer": {
+        "words": "I basically texted my coordinator",
+        "title": "Text my coordinator"
+      },
+      "stake": {
+        "level": "hurts_weeks",
+        "at_stake": "The exhibition would be delayed",
+        "cost_shape": "lands"
+      },
+      "words": "I basically texted my coordinator",
+      "started_at": "2026-09-30T03:50:00+00:00",
+      "started_source": "fixture://synthetic-exhibition"
+    },
+    {
+      "id": "brn_20260930_035041_d000000000000029",
+      "source": "fixture://synthetic-exhibition",
+      "memo_row": 2,
+      "fields": {
+        "parent": "brn_20260929_123414_d00000000000000f",
+        "order": 2
+      },
+      "date_kind": "not_before",
+      "planned_on_event": true,
+      "event": "venue inspection",
+      "words": "8 October",
+      "title": "Get a safety checklist from the inspector",
+      "title_quote": "get a safety checklist from the inspector",
+      "quoted_message": "Yeah, I started the exhibition's permit already, I basically texted my coordinator, but what's next is I have to get a safety checklist from the inspector on my venue inspection on 8 October, and then officially submit my permit along with the memo on Exhibit Portal.",
+      "title_source": "fixture://synthetic-exhibition"
+    },
+    {
+      "id": "brn_20260930_035132_d00000000000002b",
+      "source": "fixture://synthetic-exhibition",
+      "memo_row": 3,
+      "fields": {
+        "parent": "brn_20260929_123414_d00000000000000f",
+        "order": 3,
+        "after": [
+          "brn_20260930_035041_d000000000000029"
+        ]
+      },
+      "no_dates": true,
+      "words": "then officially submit my permit along with the memo on Exhibit Portal",
+      "title": "Officially submit my permit along with the memo on Exhibit Portal",
+      "title_quote": "officially submit my permit along with the memo on Exhibit Portal",
+      "quoted_message": "Yeah, I started the exhibition's permit already, I basically texted my coordinator, but what's next is I have to get a safety checklist from the inspector on my venue inspection on 8 October, and then officially submit my permit along with the memo on Exhibit Portal.",
+      "title_source": "fixture://synthetic-exhibition"
+    },
+    {
+      "id": "brn_20260930_035714_d00000000000002d",
+      "source": "fixture://synthetic-exhibition",
+      "memo_row": 4,
+      "date_kind": "planned",
+      "questions": [
+        "Is it a project with 'Plan the Atlas outreach campaign'? Its name?"
+      ],
+      "words": "today"
+    },
+    {
+      "id": "brn_20260930_035653_d00000000000002c",
+      "source": "fixture://synthetic-exhibition",
+      "memo_row": 5,
+      "fields": {
+        "parent": "brn_20260930_020454_d000000000000022",
+        "order": 1
+      },
+      "date_kind": "planned",
+      "words": "I need to edit my brief before I send to Morgan",
+      "title": "Edit my brief",
+      "title_quote": "edit my brief",
+      "quoted_message": "I need to edit my brief before I send to Morgan",
+      "title_source": "fixture://synthetic-exhibition"
+    },
+    {
+      "id": "brn_20260930_020457_d000000000000023",
+      "source": "fixture://synthetic-exhibition",
+      "memo_row": 6,
+      "date_kind": "planned",
+      "words": "today"
+    },
+    {
+      "id": "brn_20260929_134536_d000000000000011",
+      "source": "fixture://synthetic-exhibition",
+      "memo_row": 7,
+      "date_kind": "appointment",
+      "questions": [
+        "Did it happen?"
+      ],
+      "words": "at 12pm"
+    },
+    {
+      "id": "brn_20260929_123418_d000000000000010",
+      "source": "fixture://synthetic-exhibition",
+      "memo_row": 8,
+      "fields": {
+        "labels": [
+          "exhibition admin"
+        ]
+      },
+      "remove_length": true,
+      "questions": [
+        "Exhibition admin's list names three parts: a venue appointment, a inspector's approval, and the co-organizer's signature. Yes, or say them your way."
+      ],
+      "stake": {
+        "level": "changes_life",
+        "at_stake": "about 40 display slots a month",
+        "cost_shape": "grows"
+      },
+      "words": "about 40 display slots a month"
+    },
+    {
+      "id": "brn_20260929_123409_d00000000000000e",
+      "source": "fixture://synthetic-exhibition",
+      "memo_row": 9,
+      "fields": {
+        "labels": [
+          "exhibition admin"
+        ]
+      },
+      "stake": {
+        "level": "nothing_much"
+      },
+      "words": "nothing much"
+    },
+    {
+      "id": "brn_20260929_123405_d00000000000000d",
+      "source": "fixture://synthetic-exhibition",
+      "memo_row": 10,
+      "fields": {
+        "labels": [
+          "exhibition admin"
+        ]
+      },
+      "stake": {
+        "level": "nuisance"
+      },
+      "words": "a nuisance"
+    },
+    {
+      "id": "brn_20260929_123356_d00000000000000b",
+      "source": "fixture://synthetic-exhibition",
+      "memo_row": 11,
+      "state": "no_longer_needed",
+      "fields": {
+        "reason": "Just a label"
+      },
+      "owner_words": "Just a label",
+      "words": "Just a label"
+    },
+    {
+      "id": "brn_20260929_105126_d00000000000000a",
+      "source": "fixture://synthetic-exhibition",
+      "memo_row": 12,
+      "questions": [
+        "Park it, or what's next?"
+      ],
+      "stake": {
+        "level": "nothing_much"
+      },
+      "words": "nothing much"
+    },
+    {
+      "id": "brn_20260926_034820_d000000000000002",
+      "source": "fixture://synthetic-exhibition",
+      "memo_row": 13,
+      "unchanged": true,
+      "questions": [
+        "It's a status note, not a suggestion: drop?"
+      ],
+      "words": "Exhibition Auto Router: enabled"
+    }
+  ],
+  "borderline": [
+    {
+      "id": "brn_20260926_034820_d000000000000002",
+      "source": "fixture://synthetic-exhibition",
+      "question": "Archive this whole thing?"
+    },
+    {
+      "id": "brn_20260929_104535_d000000000000007",
+      "source": "fixture://synthetic-exhibition",
+      "question": "Archive this whole thing?"
+    },
+    {
+      "id": "brn_20260929_144218_d00000000000001b",
+      "source": "fixture://synthetic-exhibition",
+      "question": "Archive this whole thing?"
+    },
+    {
+      "id": "brn_20260927_153246_d000000000000004",
+      "source": "fixture://synthetic-exhibition",
+      "question": "Archive this whole thing?"
+    }
+  ],
+  "test_data_ids": [
+    "brn_20260930_034430_d000000000000024",
+    "brn_20260930_040714_d00000000000002e",
+    "brn_20260930_034519_d000000000000025"
+  ]
+}

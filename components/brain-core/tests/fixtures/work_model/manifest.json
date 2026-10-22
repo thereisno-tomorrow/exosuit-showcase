@@ -1,0 +1,522 @@
+{
+  "schema": "work-model.fixture/v1",
+  "audit_sgt": "2026-09-30T12:20:00+08:00",
+  "audit_store_version": "416e917635ca55628a5ced69f0507fba22f50c93",
+  "audited_current_ids": [
+    "brn_20260930_035653_d00000000000002c",
+    "brn_20260930_020457_d000000000000023",
+    "brn_20260929_134536_d000000000000011",
+    "brn_20260930_035041_d000000000000029",
+    "brn_20260929_123418_d000000000000010",
+    "brn_20260929_123409_d00000000000000e",
+    "brn_20260929_123405_d00000000000000d",
+    "brn_20260929_105126_d00000000000000a",
+    "brn_20260930_035714_d00000000000002d",
+    "brn_20260930_035132_d00000000000002b",
+    "brn_20260929_104527_d000000000000006",
+    "brn_20260930_034850_d000000000000026",
+    "brn_20260929_104535_d000000000000007",
+    "brn_20260930_034906_d000000000000027",
+    "brn_20260929_123356_d00000000000000b",
+    "brn_20260930_035026_d000000000000028",
+    "brn_20260926_034820_d000000000000002",
+    "brn_20260929_144218_d00000000000001b",
+    "brn_20260927_153246_d000000000000004",
+    "brn_20260930_040714_d00000000000002e",
+    "brn_20260930_034519_d000000000000025",
+    "brn_20260929_144251_d000000000000020",
+    "brn_20260929_144245_d00000000000001f",
+    "brn_20260929_144239_d00000000000001e",
+    "brn_20260929_144226_d00000000000001d",
+    "brn_20260929_144222_d00000000000001c",
+    "brn_20260929_144217_d00000000000001a",
+    "brn_20260929_144210_d000000000000019",
+    "brn_20260929_144159_d000000000000018",
+    "brn_20260929_144152_d000000000000017",
+    "brn_20260929_144148_d000000000000016",
+    "brn_20260929_144143_d000000000000015",
+    "brn_20260929_144132_d000000000000014",
+    "brn_20260929_144128_d000000000000013",
+    "brn_20260929_144123_d000000000000012"
+  ],
+  "audited_predecessor_ids": [
+    "brn_20260929_094446_d000000000000005",
+    "brn_20260930_020454_d000000000000022",
+    "brn_20260929_160927_d000000000000021",
+    "brn_20260930_034430_d000000000000024",
+    "brn_20260930_035056_d00000000000002a",
+    "brn_20260929_123414_d00000000000000f",
+    "brn_20260929_123401_d00000000000000c",
+    "brn_20260929_105119_d000000000000008",
+    "brn_20260929_105122_d000000000000009",
+    "brn_20260926_034801_d000000000000001",
+    "brn_20260926_034015_d000000000000000",
+    "brn_20260926_035740_d000000000000003"
+  ],
+  "audited_open_ids": [
+    "brn_20260930_035653_d00000000000002c",
+    "brn_20260930_020457_d000000000000023",
+    "brn_20260929_134536_d000000000000011",
+    "brn_20260930_035041_d000000000000029",
+    "brn_20260929_123418_d000000000000010",
+    "brn_20260929_123409_d00000000000000e",
+    "brn_20260929_123405_d00000000000000d",
+    "brn_20260929_105126_d00000000000000a",
+    "brn_20260930_035714_d00000000000002d",
+    "brn_20260930_035132_d00000000000002b",
+    "brn_20260929_123356_d00000000000000b",
+    "brn_20260930_035026_d000000000000028",
+    "brn_20260926_034820_d000000000000002"
+  ],
+  "test_data_ids": [
+    "brn_20260930_040714_d00000000000002e",
+    "brn_20260930_034430_d000000000000024",
+    "brn_20260930_034519_d000000000000025"
+  ],
+  "borderline_ids": [
+    "brn_20260926_034820_d000000000000002",
+    "brn_20260929_104535_d000000000000007",
+    "brn_20260929_144218_d00000000000001b",
+    "brn_20260927_153246_d000000000000004"
+  ],
+  "made_up_post_audit_ids": [
+    "brn_20260930_050000_d00000000000002f",
+    "brn_20260930_050001_d000000000000030",
+    "brn_20260930_050002_d000000000000031",
+    "brn_20260930_050003_d000000000000032",
+    "brn_20260930_050004_d000000000000033",
+    "brn_20260930_050005_d000000000000034",
+    "brn_20260930_050006_d000000000000035",
+    "brn_20260930_050007_d000000000000036",
+    "brn_20260930_050008_d000000000000037",
+    "brn_20260930_050009_d000000000000038",
+    "brn_20260930_050010_d000000000000039",
+    "brn_20260930_050011_d00000000000003a",
+    "brn_20260930_050012_d00000000000003b",
+    "brn_20260930_050013_d00000000000003c",
+    "brn_20260930_050014_d00000000000003d",
+    "brn_20260930_050015_d00000000000003e",
+    "brn_20260930_050016_d00000000000003f",
+    "brn_20260930_050017_d000000000000040",
+    "brn_20260930_050018_d000000000000041",
+    "brn_20260930_050019_d000000000000042",
+    "brn_20260930_050020_d000000000000043",
+    "brn_20260930_050021_d000000000000044",
+    "brn_20260930_050022_d000000000000045",
+    "brn_20260930_050023_d000000000000046",
+    "brn_20260930_050024_d000000000000047",
+    "brn_20260930_050025_d000000000000048",
+    "brn_20260930_050026_d000000000000049"
+  ],
+  "made_up_cases": {
+    "planned_due_today": "brn_20260930_050000_d00000000000002f",
+    "agent_first_step": "brn_20260930_050001_d000000000000030",
+    "importance": "brn_20260930_050002_d000000000000031",
+    "blocked_by": "brn_20260930_050003_d000000000000032",
+    "routine": "brn_20260930_050004_d000000000000033"
+  },
+  "records": {
+    "brn_20260930_035653_d00000000000002c": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260930_020457_d000000000000023": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_134536_d000000000000011": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260930_035041_d000000000000029": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_123418_d000000000000010": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_105119_d000000000000008": {
+      "group": "audited_predecessor",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original predecessor body/source/timing/links unavailable except explicit Finding 6 differences"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_123409_d00000000000000e": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_123405_d00000000000000d": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_105126_d00000000000000a": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260930_035714_d00000000000002d": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260930_020454_d000000000000022": {
+      "group": "audited_predecessor",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original predecessor body/source/timing/links unavailable except explicit Finding 6 differences"
+      ],
+      "synthetic": true
+    },
+    "brn_20260930_035132_d00000000000002b": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260930_035056_d00000000000002a": {
+      "group": "audited_predecessor",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original predecessor body/source/timing/links unavailable except explicit Finding 6 differences"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_104527_d000000000000006": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_094446_d000000000000005": {
+      "group": "audited_predecessor",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original predecessor body/source/timing/links unavailable except explicit Finding 6 differences"
+      ],
+      "synthetic": true
+    },
+    "brn_20260930_034850_d000000000000026": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_160927_d000000000000021": {
+      "group": "audited_predecessor",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original predecessor body/source/timing/links unavailable except explicit Finding 6 differences"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_104535_d000000000000007": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260926_034801_d000000000000001": {
+      "group": "audited_predecessor",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original predecessor body/source/timing/links unavailable except explicit Finding 6 differences"
+      ],
+      "synthetic": true
+    },
+    "brn_20260930_034906_d000000000000027": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_123401_d00000000000000c": {
+      "group": "audited_predecessor",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original predecessor body/source/timing/links unavailable except explicit Finding 6 differences"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_123356_d00000000000000b": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_105122_d000000000000009": {
+      "group": "audited_predecessor",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original predecessor body/source/timing/links unavailable except explicit Finding 6 differences"
+      ],
+      "synthetic": true
+    },
+    "brn_20260930_035026_d000000000000028": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_123414_d00000000000000f": {
+      "group": "audited_predecessor",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original predecessor body/source/timing/links unavailable except explicit Finding 6 differences"
+      ],
+      "synthetic": true
+    },
+    "brn_20260926_034820_d000000000000002": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_144218_d00000000000001b": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260926_034015_d000000000000000": {
+      "group": "audited_predecessor",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original predecessor body/source/timing/links unavailable except explicit Finding 6 differences"
+      ],
+      "synthetic": true
+    },
+    "brn_20260927_153246_d000000000000004": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260926_035740_d000000000000003": {
+      "group": "audited_predecessor",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original predecessor body/source/timing/links unavailable except explicit Finding 6 differences"
+      ],
+      "synthetic": true
+    },
+    "brn_20260930_040714_d00000000000002e": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260930_034430_d000000000000024": {
+      "group": "audited_predecessor",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original predecessor body/source/timing/links unavailable except explicit Finding 6 differences"
+      ],
+      "synthetic": true
+    },
+    "brn_20260930_034519_d000000000000025": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_144251_d000000000000020": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable",
+        "exact came_from target unavailable; omitted"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_144245_d00000000000001f": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable",
+        "exact came_from target unavailable; omitted"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_144239_d00000000000001e": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable",
+        "exact came_from target unavailable; omitted",
+        "original title unavailable; ID-labelled placeholder"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_144226_d00000000000001d": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable",
+        "exact came_from target unavailable; omitted",
+        "original title unavailable; ID-labelled placeholder"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_144222_d00000000000001c": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable",
+        "exact came_from target unavailable; omitted",
+        "original title unavailable; ID-labelled placeholder"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_144217_d00000000000001a": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable",
+        "exact came_from target unavailable; omitted",
+        "original title unavailable; ID-labelled placeholder"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_144210_d000000000000019": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable",
+        "exact came_from target unavailable; omitted"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_144159_d000000000000018": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable",
+        "exact came_from target unavailable; omitted",
+        "original title unavailable; ID-labelled placeholder"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_144152_d000000000000017": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable",
+        "exact came_from target unavailable; omitted",
+        "original title unavailable; ID-labelled placeholder"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_144148_d000000000000016": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable",
+        "exact came_from target unavailable; omitted",
+        "original title unavailable; ID-labelled placeholder"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_144143_d000000000000015": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable",
+        "exact came_from target unavailable; omitted",
+        "original title unavailable; ID-labelled placeholder"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_144132_d000000000000014": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable",
+        "exact came_from target unavailable; omitted",
+        "original title unavailable; ID-labelled placeholder"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_144128_d000000000000013": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable",
+        "exact came_from target unavailable; omitted",
+        "original title unavailable; ID-labelled placeholder"
+      ],
+      "synthetic": true
+    },
+    "brn_20260929_144123_d000000000000012": {
+      "group": "audited_current",
+      "source": "fixture://synthetic-exhibition",
+      "gaps": [
+        "original recorded_by, evidence locator/hash, updated_at, full body unavailable",
+        "exact came_from target unavailable; omitted",
+        "original title unavailable; ID-labelled placeholder"
+      ],
+      "synthetic": true
+    }
+  },
+  "description": "Fictional community exhibition. All record identities, wording and provenance are synthetic."
+}

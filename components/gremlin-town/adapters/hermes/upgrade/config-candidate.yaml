@@ -1,0 +1,33 @@
+# Preparation only. Do not overwrite Diablo's config with this partial template.
+# Plan B: plugin registers five Brain tools plus one more-tools front.
+# Search off keeps these directly callable. Native platform budgets must pass.
+tools:
+  tool_search:
+    enabled: off
+memory:
+  provider: brain
+model:
+  provider: openai-codex
+  default: gpt-6
+auxiliary:
+  monitor:
+    provider: openai-codex
+    model: gpt-6-luna
+platforms:
+  telegram:
+    enabled: false
+  discord:
+    enabled: false
+  feishu:
+    enabled: false
+  webhook:
+    enabled: false
+  api_server:
+    enabled: false
+model_catalog:
+  enabled: false
+plugins:
+  entries: {}
+
+session_reset:
+  mode: none

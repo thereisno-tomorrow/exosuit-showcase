@@ -1,0 +1,316 @@
+{
+  "schema": 1,
+  "candidate": {
+    "version": "0.21.5",
+    "tag": "v2026.9.24",
+    "commit": "f97608f178d1ffeca59860195ab7da295f7c8e5f"
+  },
+  "inventory_basis": "Repository source and named dated install records; no live SSH inventory. Live deviations remain an explicit hub gate.",
+  "pieces": [
+    {
+      "id": "plugin",
+      "piece": "31 GT/BC tools and optional orientation/review/calendar gates",
+      "sources": [
+        "plugin.py",
+        "plugin.yaml",
+        "hub_client.py",
+        "settings.json",
+        "plugin-settings.json",
+        "install-manifest.json"
+      ],
+      "hermes_contract": "Standalone directory plugin loader, register_tool, kwargs dispatch, non-overriding registry",
+      "checks": [
+        "plugin",
+        "pin:*",
+        "fixture:*",
+        "plugin-tool-budget"
+      ]
+    },
+    {
+      "id": "words-shadow",
+      "piece": "Exact-message observation and write journal",
+      "sources": [
+        "__init__.py",
+        "plugin.py"
+      ],
+      "hermes_contract": "pre_llm_call hook and session/turn metadata; protected owner sender/key enrollment",
+      "checks": [
+        "hub:words-shadow"
+      ]
+    },
+    {
+      "id": "memory",
+      "piece": "Brain Home block, preferences, recall, compression and idle markers",
+      "sources": [
+        "memory_brain/__init__.py",
+        "memory_brain/provider.py",
+        "memory_brain/hub_client.py",
+        "memory_brain/plugin.yaml",
+        "memory_brain/settings.json",
+        "memory_brain/install-manifest.json"
+      ],
+      "hermes_contract": "MemoryProvider registration, initialize, prefetch, sync_turn, on_pre_compress, on_session_switch, shutdown; context threads",
+      "checks": [
+        "memory-interface",
+        "brain-block-fixture",
+        "hub:brain"
+      ]
+    },
+    {
+      "id": "skills",
+      "piece": "Four packaged skills and native own skills",
+      "sources": [
+        "skills/gremlin-town/SKILL.md",
+        "skills/gremlin-town-review/SKILL.md",
+        "skills/next-action/SKILL.md",
+        "skills/calendar-time/SKILL.md"
+      ],
+      "hermes_contract": "Skill discovery, .usage.json curator pin and background edit guards; native skill_view",
+      "checks": [
+        "skills",
+        "review-skill",
+        "hub:skill-loading"
+      ]
+    },
+    {
+      "id": "eager-tools",
+      "piece": "Old local eager_tools patch: save/list/change/search plus bc_work after mega",
+      "sources": [
+        "../../../../ops/audits/2026-09-27-speed-03-install.md",
+        "../../../../architecture/system.md"
+      ],
+      "hermes_contract": "Plan B: supported register_tool; five Brain schemas plus one front for enabled rare plugin tools; search off; no Hermes patch",
+      "checks": [
+        "eager-tools",
+        "plan-a-rejected",
+        "compact-direct-call",
+        "compact-rare-call",
+        "compact-schema-stability",
+        "hub:full-tool-budget"
+      ]
+    },
+    {
+      "id": "daily-reset",
+      "piece": "Manual /new, selected by Nic 4 Oct; no scheduled reset",
+      "sources": [
+        "upgrade/reset-options.json",
+        "upgrade/fresh_start.py"
+      ],
+      "hermes_contract": "session_reset.mode none and documented gateway /new",
+      "checks": [
+        "hub:manual-new"
+      ]
+    },
+    {
+      "id": "mail",
+      "piece": "Three-minute script-only important mail, read-only separate login, fail-once cursor and flagged log, Discord route/fallback",
+      "sources": [
+        "scripts/mail_monitor.py",
+        "scripts/mail_monitor_documented.py",
+        "scripts/mail_scorer.py",
+        "upgrade/mail-scorer-config.yaml"
+      ],
+      "hermes_contract": "Old cron.scripts.classify_items private interface retained on live v0.20.5 only; candidate documented hermes -z in separate no-tool scorer home; hermes send JSON stdin delivery",
+      "checks": [
+        "mail-scorer-no-tools",
+        "mail-command-contract",
+        "send-command-contract",
+        "hub:mail-check",
+        "hub:mail-score",
+        "hub:courier",
+        "mail-scorer-default-soul-pin"
+      ]
+    },
+    {
+      "id": "courier",
+      "piece": "06:00 review and daytime returns",
+      "sources": [
+        "../../deploy/telegram-courier.sh"
+      ],
+      "hermes_contract": "hermes send --to --file --json; target channel and mirrored review reply semantics",
+      "checks": [
+        "send-command-contract",
+        "hub:courier",
+        "hub:conversation"
+      ]
+    },
+    {
+      "id": "wake",
+      "piece": "GT request wakes Diablo and signed webhook replies",
+      "sources": [
+        "../../deploy/wake/README.md"
+      ],
+      "hermes_contract": "Webhook adapter, signing and request/session identity; full chat context",
+      "checks": [
+        "hub:webhook"
+      ]
+    },
+    {
+      "id": "gateways",
+      "piece": "Telegram, Discord, Lark/Feishu, API server; home routes, group_sessions_per_user, per-platform toolsets",
+      "sources": [
+        "upgrade/config-candidate.yaml"
+      ],
+      "hermes_contract": "Gateway config, adapter startup, connection markers bound to new start/log bytes; platform session ownership",
+      "checks": [
+        "gateway-isolation",
+        "hub:connections",
+        "hub:config-diff"
+      ]
+    },
+    {
+      "id": "scheduler",
+      "piece": "05:30 own-memory check and three-minute important-mail",
+      "sources": [
+        "scripts/own-memory.sh",
+        "scripts/mail_monitor.py"
+      ],
+      "hermes_contract": "hermes cron list/create, monitor-script, script-only no-agent, schedule timezone and empty-output silence",
+      "checks": [
+        "scheduled-jobs",
+        "hub:scheduler"
+      ]
+    },
+    {
+      "id": "models",
+      "piece": "GPT-6 subscription and gpt-6-luna scorer",
+      "sources": [
+        "upgrade/config-candidate.yaml",
+        "upgrade/mail-scorer-config.yaml"
+      ],
+      "hermes_contract": "openai-codex authentication/provider, main and auxiliary model selections, separate scorer profile",
+      "checks": [
+        "models-config",
+        "hub:models"
+      ]
+    },
+    {
+      "id": "native-memory",
+      "piece": "Diablo own MEMORY.md/USER.md and self-review",
+      "sources": [
+        "scripts/own-memory.sh"
+      ],
+      "hermes_contract": "memories and skills paths, curator/background-review pin behavior",
+      "checks": [
+        "pin:memories/MEMORY.md",
+        "pin:memories/USER.md",
+        "hub:native-memory"
+      ]
+    },
+    {
+      "id": "restart",
+      "piece": "Mega checked restart/postcheck and snapshot",
+      "sources": [
+        "../../../../ops/audits/2026-10-02-mega-02-install.md",
+        "upgrade/restart_guard.py",
+        "upgrade/restart_helper.py"
+      ],
+      "hermes_contract": "Container idle, fresh start timestamp/log offsets, ready hub, unchanged config, pins, backup; original helper SHA 226f24159aaef815d29766bcc1a51f2580598a705a905aba0a6c9a62799cc0d2",
+      "checks": [
+        "hub:restart",
+        "config",
+        "pin:*"
+      ]
+    },
+    {
+      "id": "rollback",
+      "piece": "Exact previous version and home snapshot",
+      "sources": [
+        "upgrade/rollback.py",
+        "../../deploy/snapshot-stream.sh"
+      ],
+      "hermes_contract": "Pinned releases, version pointer, stopped gateway snapshot consistency and preserved data; no older Brain writer",
+      "checks": [
+        "hub:rollback"
+      ]
+    },
+    {
+      "id": "native-docs",
+      "piece": "Opt-in native documentation disclosure in compact plugin mode",
+      "sources": [
+        "plugin.py",
+        "upgrade/hub_observer.py"
+      ],
+      "hermes_contract": "Supported llm_request middleware preserves native names and non-description input constraints. Full original schema through more-tools describe; native calls keep native dispatch and approvals.",
+      "checks": [
+        "native-doc-disclosure",
+        "hub:native-docs",
+        "hub:full-tool-budget"
+      ]
+    }
+  ],
+  "hub_checks": {
+    "hub:words-shadow": "Verify installed native hook, owner enrollment and one exact-message signed observation without exposing its protected key; needs hub.",
+    "hub:brain": "Actual before-message Brain block, matching recall, compression/idle marker and outbox replay on a fixture Brain Home; needs hub/model.",
+    "hub:skill-loading": "Native skill_view loads the review and other packaged skills; four skill pins plus provider/plugin pins; own skills preserved.",
+    "hub:full-tool-budget": "Full Telegram/Discord/Lark/wake/cron tool schemas <=63,000 characters and every tool <=12,000; plugin-only measurement is insufficient.",
+    "hub:mail-check": "Run installed mail_monitor_documented.py --check with existing separate exactly-readonly Gmail monitor login; saves/sends nothing. This PC run reads no login.",
+    "hub:mail-score": "Provision isolated scorer home with no tools/custom plugins; actual documented CLI call on synthetic mail, gpt-6-luna subscription, malformed output and cursor refusal.",
+    "hub:courier": "hermes send syntax and target route, confirmed JSON success, review and important-mail delivery and safe Telegram fallback; use test bots first.",
+    "hub:conversation": "One real scripted save returning receipt, recall and numbered review answer in test Brain Home; never Nic real records.",
+    "hub:webhook": "Signed wake route answers and request reaches test Diablo once, with correct session context; read-only route status alone is insufficient.",
+    "hub:connections": "Discord test bot connects on practice only; disabled gateways inactive. Real Discord and existing Telegram connect after authorized switch; no Telegram test bot.",
+    "hub:config-diff": "Capture nonsecret installed projection and exact config fingerprint privately; diff only approved eager/scorer/reset changes and preserve home routes/group sessions/toolsets.",
+    "hub:scheduler": "Native cron lists enabled 05:30 and every-3m jobs, no-agent/monitor semantics, timezone and natural successful run; practice entries remain disabled.",
+    "hub:models": "Actual subscription provider/model identity and scorer gpt-6-luna inference; do not print credentials or move auth during check.",
+    "hub:native-memory": "Own skills and memory preimages unchanged; pinned packaged skills survive self-review; test background behavior on practice only.",
+    "hub:restart": "Idle check, checked mount/container identity, one authorized restart, new start/log-bound connection evidence, ready GT and approved flags; no repair on failure.",
+    "hub:rollback": "Rehearse exact previous image digest/home snapshot restore on hub practice container, then recheck; PC pointer/home rehearsal is not a Docker proof.",
+    "hub:manual-new": "On Discord practice: /new rotates chat and reloads Brain block; no timed reset plugin/job. Live Telegram only needs connection confirmation.",
+    "hub:frequent-tools": "Collect tool-name counts only from actual use, no message or argument contents; preserve common review tools directly via always_ready_tools after measuring budget.",
+    "hub:rare-conversation": "On Discord practice, model lists/describes/calls a rare enabled operation through more-tools correctly on first attempt; actual provider execution, not fixture handler only.",
+    "hub:native-docs": "Actual model retrieves original native instructions through more-tools describe, then calls the native tool successfully on Discord."
+  },
+  "expected_tools": [
+    "gremlin_town_participants_list",
+    "gremlin_town_requests_create",
+    "gremlin_town_requests_list",
+    "gremlin_town_requests_read",
+    "gremlin_town_requests_report",
+    "gremlin_town_requests_reply",
+    "gremlin_town_requests_cancel",
+    "gremlin_town_requests_check",
+    "gremlin_town_operations_get",
+    "gremlin_town_events_list",
+    "bc_memory_search",
+    "bc_memory_list",
+    "bc_context_retrieve",
+    "bc_continuity_start",
+    "bc_continuity_append",
+    "bc_continuity_recover",
+    "bc_continuity_list",
+    "bc_continuity_close",
+    "bc_decision_record",
+    "bc_memory_save",
+    "bc_memory_change",
+    "bc_memory_read",
+    "bc_orient",
+    "bc_next",
+    "bc_next_respond",
+    "bc_agenda",
+    "bc_weekly",
+    "bc_calendar_remove",
+    "bc_work",
+    "gremlin_town_review_respond",
+    "gremlin_town_moments_signal"
+  ],
+  "expected_eager_tools": [
+    "bc_memory_save",
+    "bc_memory_list",
+    "bc_memory_change",
+    "bc_memory_search",
+    "bc_work"
+  ],
+  "tool_visibility": {
+    "selected": "brain-and-more",
+    "direct_tools": [
+      "bc_memory_save",
+      "bc_memory_list",
+      "bc_memory_change",
+      "bc_memory_search",
+      "bc_work"
+    ],
+    "front_tool": "gremlin_town_more_tools",
+    "reason": "llm_request injection cannot update the earlier valid_tool_names; native direct-call validation rejects injected plugin names"
+  }
+}

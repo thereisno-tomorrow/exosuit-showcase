@@ -1,0 +1,105 @@
+{
+  "_doc": "Twenty questions phrased the way Nic asks Brain Home for something, each naming the fixture record ID(s) in records.json that should come back. Used by tests/benchmarks/test_recall.py (a fixture snapshot through FakeGitHub) and by gremlin_town.benchmarks.recall_cli (the same questions against a live hub, read-only). To add a question: pick (or write) a fixture record in records.json with a distinctive word in its title (title hits rank above body-only hits in memory.search's real ranking - see github_brain_provider.py _search), phrase the question the way Nic actually would, list every record ID in the fixture set that would be a correct answer (a question can have more than one), and give it a short unique id below. Keep 'preference' records out of expected_record_ids: memory.search's snapshot only covers capture/commitment/item/fact kinds, so a preference is never returned today (documented in docs/mcp/everyday-brain-core.md).",
+  "questions": [
+    {
+      "id": "printer_ink",
+      "text": "what did I say about the printer ink",
+      "expected_record_ids": ["brn_20260925_020000_00000002"]
+    },
+    {
+      "id": "due_friday",
+      "text": "anything due Friday",
+      "expected_record_ids": ["brn_20260922_010000_00000003"]
+    },
+    {
+      "id": "waiting_on_me",
+      "text": "who is waiting on me",
+      "expected_record_ids": ["brn_20260924_030000_00000004", "brn_20260923_030000_00000005"]
+    },
+    {
+      "id": "next_week_exam",
+      "text": "next week's exam",
+      "expected_record_ids": ["brn_20260920_090000_00000006"]
+    },
+    {
+      "id": "dentist_appointment",
+      "text": "when's the dentist appointment",
+      "expected_record_ids": ["brn_20260917_050000_0000000a"]
+    },
+    {
+      "id": "compost_duty",
+      "text": "compost duty this week",
+      "expected_record_ids": ["brn_20260921_060000_0000000b"]
+    },
+    {
+      "id": "library_return",
+      "text": "do I need to return anything to the library",
+      "expected_record_ids": ["brn_20260914_070000_0000000d"]
+    },
+    {
+      "id": "laptop_charger",
+      "text": "what did I say about the laptop charger",
+      "expected_record_ids": ["brn_20260923_100000_00000016"]
+    },
+    {
+      "id": "car_servicing",
+      "text": "is the car booked in for servicing",
+      "expected_record_ids": ["brn_20260915_103000_00000017"]
+    },
+    {
+      "id": "farid_drill",
+      "text": "do I still have Farid's drill",
+      "expected_record_ids": ["brn_20260921_110000_00000019"]
+    },
+    {
+      "id": "passport_renewal",
+      "text": "when does my passport need renewing",
+      "expected_record_ids": ["brn_20260919_120000_0000001b"]
+    },
+    {
+      "id": "team_offsite",
+      "text": "what's the status on the team offsite",
+      "expected_record_ids": ["brn_20260922_123000_0000001d"]
+    },
+    {
+      "id": "grace_flight",
+      "text": "what time is Grace's flight landing",
+      "expected_record_ids": ["brn_20260924_133000_00000020", "brn_20260924_140000_00000030"]
+    },
+    {
+      "id": "jason_owes",
+      "text": "does Jason still owe me money",
+      "expected_record_ids": ["brn_20260924_040000_00000024"]
+    },
+    {
+      "id": "wifi_network_name",
+      "text": "what's the wifi network called",
+      "expected_record_ids": ["brn_20260902_050000_00000025"]
+    },
+    {
+      "id": "reading_group_schedule",
+      "text": "when does the reading group meet",
+      "expected_record_ids": ["brn_20260909_050000_00000026"]
+    },
+    {
+      "id": "road_tax",
+      "text": "when does the car's road tax expire",
+      "expected_record_ids": ["brn_20260911_053000_00000027"]
+    },
+    {
+      "id": "elena_phone",
+      "text": "what's Elena's new phone number",
+      "expected_record_ids": ["brn_20260915_073000_0000002b"]
+    },
+    {
+      "id": "plumber_fee",
+      "text": "how much is the plumber's callout fee",
+      "expected_record_ids": ["brn_20260912_080000_0000002c"]
+    },
+    {
+      "id": "parking_zone",
+      "text": "what zone is the parking permit",
+      "expected_record_ids": ["brn_20260922_100000_00000032"]
+    }
+  ]
+}

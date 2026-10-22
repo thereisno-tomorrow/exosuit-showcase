@@ -1,0 +1,36 @@
+# INACTIVE example. Install only at mega-build stage 2, on Nic's go.
+# Start manually after the first reviewed sync. Failures remain stopped.
+[Unit]
+Description=Exosuit FlowSavvy schedule connector
+After=gremlin-town.service
+
+[Service]
+Type=simple
+User=gremlin-town
+Group=gremlin-town
+WorkingDirectory=/opt/gremlin-town/current
+EnvironmentFile=/etc/gremlin-town/service.env
+LoadCredential=github_app_key:/etc/gremlin-town/github-app-gt.pem
+Environment=GT_GITHUB_APP_KEY_FILE=%d/github_app_key
+LoadCredential=google_credential:/etc/gremlin-town/google-credential.json
+Environment=GT_GOOGLE_CREDENTIAL_FILE=%d/google_credential
+LoadCredential=flowsavvy_token:/etc/gremlin-town/flowsavvy-token
+Environment=GT_FLOWSAVVY_TOKEN_FILE=%d/flowsavvy_token
+ExecStart=/opt/gremlin-town/current/.venv/bin/gremlin-town flowsavvy watch --config /etc/gremlin-town/config.toml
+Restart=no
+UMask=0077
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
+ReadWritePaths=/var/lib/gremlin-town /var/lib/gremlin-town-brain
+ReadWritePaths=-/var/lib/gremlin-town-oauth
+
+[Install]
+WantedBy=multi-user.target

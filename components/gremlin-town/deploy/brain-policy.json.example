@@ -1,0 +1,69 @@
+{
+  "schema": "gt.brain-owner-policy/v1",
+  "revision": "REPLACE_WITH_DATED_POLICY_REVISION",
+  "owners": [
+    {
+      "kind": "project",
+      "project_id": "REPLACE_WITH_ENROLLED_PROJECT_ID",
+      "owner_id": "REPLACE_WITH_ENROLLED_PROJECT_ID",
+      "owner_locator": "vault://REPLACE_WITH_ENROLLED_PROJECT_ID",
+      "readers": ["local-codex", "hermes-wa", "fleet-boss-grok", "chatgpt-web", "claude-web"],
+      "writers": ["local-codex", "hermes-wa", "fleet-boss-grok", "chatgpt-web", "claude-web"],
+      "operations": [
+        "context.retrieve",
+        "continuity.start",
+        "continuity.append",
+        "continuity.recover",
+        "continuity.list",
+        "continuity.close"
+      ],
+      "session_id": "REPLACE_WITH_ACTIVE_SESSION_ID"
+    },
+    {
+      "kind": "personal",
+      "project_id": null,
+      "owner_id": "brain-home",
+      "owner_locator": "vault://brain-home",
+      "readers": ["local-codex", "hermes-wa", "fleet-boss-grok", "chatgpt-web", "claude-web"],
+      "writers": ["local-codex", "hermes-wa", "fleet-boss-grok", "chatgpt-web", "claude-web"],
+      "operations": [
+        "decision.record",
+        "work",
+        "memory.save",
+        "memory.change",
+        "memory.read",
+        "memory.search",
+        "memory.list",
+        "continuity.start",
+        "continuity.append",
+        "continuity.recover",
+        "continuity.list",
+        "continuity.close"
+      ],
+      "session_id": null
+    },
+    {
+      "kind": "cross-project",
+      "project_id": null,
+      "owner_id": "brain-home",
+      "owner_locator": "vault://brain-home",
+      "readers": ["local-codex", "hermes-wa", "fleet-boss-grok", "chatgpt-web", "claude-web"],
+      "writers": ["local-codex", "hermes-wa", "fleet-boss-grok", "chatgpt-web", "claude-web"],
+      "operations": [
+        "decision.record",
+        "memory.save",
+        "memory.change",
+        "memory.read",
+        "memory.search",
+        "memory.list",
+        "continuity.start",
+        "continuity.append",
+        "continuity.recover",
+        "continuity.list",
+        "continuity.close",
+        "sitrep.read"
+      ],
+      "session_id": null
+    }
+  ]
+}

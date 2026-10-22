@@ -1,0 +1,184 @@
+# Non-secret runtime configuration. Install as /etc/gremlin-town/config.toml.
+[server]
+host = "127.0.0.1"
+port = 8765
+database = "/var/lib/gremlin-town/gremlin-town.sqlite3"
+operator_only = false
+
+# Same supervised process, separate loopback listener. This listener must
+# expose only the ten participant operations and accept only fleet-boss-grok.
+[public_gateway]
+host = "127.0.0.1"
+port = 8766
+actor_id = "fleet-boss-grok"
+allowed_operations = [
+  "participants.list", "requests.create", "requests.list", "requests.read",
+  "requests.report", "requests.reply", "requests.cancel", "requests.check",
+  "operations.get", "events.list"
+]
+
+[agentmail]
+base_url = "https://api.agentmail.to"
+inbox_id = "agenthub@example.invalid"
+api_key_file_env = "GT_AGENTMAIL_API_KEY_FILE"
+
+[recovery]
+normal_clients_allowed = true
+outbound_dispatch_allowed = true
+mcp_allowed = true
+
+[participants]
+file = "/etc/gremlin-town/participants.toml"
+
+# Inactive MCP example. Reserved domains must be replaced for your own host.
+# Keep disabled until the reviewed release, routes and protected inputs are ready.
+[mcp]
+enabled = false
+host = "127.0.0.1"
+port = 8769
+public_url = "https://gateway.example.invalid"
+private_url = "https://hub.example.invalid"
+# Separate from work DB and snapshot allowlist; sole store is state_dir/oauth.sqlite3.
+state_dir = "/var/lib/gremlin-town-oauth"
+# Optional: days one approved app connection lasts before the app must reconnect
+# (1-365, default 90). Omit it to keep the default; releases before this key refuse it.
+# max_grant_days = 90
+client_id = "REPLACE_WITH_PREREGISTERED_CHATGPT_CLIENT_ID"
+client_secret_file = "/etc/gremlin-town/mcp-client-secret"
+# EXAMPLE ONLY: final production app callback is pending; read it from that app
+# before freezing this list. Do not copy the fixture app's account-specific URL.
+redirect_uris = ["https://chatgpt.com/connector_platform_oauth_redirect"]
+# The three keys above are the single-client form and always mean chatgpt-web.
+# Proposed two-app form (approval required): replace those three keys with one
+# client entry per app, as below. Each participant must be enrolled OAuth-only.
+# [[mcp.client]]
+# participant = "chatgpt-web"
+# name = "ChatGPT web"
+# client_id = "REPLACE_WITH_UNCHANGED_CHATGPT_CLIENT_ID"
+# client_secret_file = "/etc/gremlin-town/mcp-client-secret"
+# redirect_uris = ["https://chatgpt.com/connector_platform_oauth_redirect"]
+# origins = ["https://chatgpt.com"]
+#
+# [[mcp.client]]
+# participant = "claude-web"
+# name = "Claude"
+# client_id = "REPLACE_WITH_NEW_RANDOM_CLAUDE_CLIENT_ID"
+# # Public PKCE client: no secret. Anthropic documents the claude.ai callback;
+# # integrator guides also register the claude.com form.
+# redirect_uris = ["https://claude.ai/api/mcp/auth_callback", "https://claude.com/api/mcp/auth_callback"]
+# origins = ["https://claude.ai", "https://claude.com"]
+
+# Brain Core tools share the MCP above but stay absent while disabled. Enabling
+# requires a separately reviewed PC connector route, exact private GitHub repo
+# and branch, protected token files, owner policy, and data/root enrollment.
+# No values have been accepted or enrolled by this example.
+[brain_core]
+enabled = false
+# Storage layer 2: keep replaced blobs at archive/<old path> in the same commit.
+# OFF until the separately authorized layer 2 cutover and one-time move.
+archive_superseded = false
+# connector_url = "https://REPLACE_ENROLLED_OVERLAY_HOSTNAME:PORT"
+# connector_token_file = "/etc/gremlin-town/brain-connector-token"
+# github_repository = "REPLACE_OWNER/REPLACE_PRIVATE_REPOSITORY"
+# github_branch = "REPLACE_ACCEPTED_BRANCH"
+# github_token_file = "/etc/gremlin-town/brain-github-token"
+# Or, instead of github_token_file, a GitHub App that mints its own tokens:
+# github_app_id = 0
+# github_installation_id = 0
+# github_app_private_key_file = "/etc/gremlin-town/github-app-brain.pem"
+# policy_file = "/etc/gremlin-town/brain-policy.json"
+# decision_staging_dir = "/var/lib/gremlin-town-brain/decision-staging"
+# ownership_catalog_file = "/etc/gremlin-town/brain-ownership-catalog.yaml"
+# source_registry_file = "/etc/gremlin-town/brain-sources.json"
+
+# Accepted but unread in work-01. Work-02's door uses this independent recipient.
+[work]
+door_participant = "hermes-wa"
+
+# Google Calendar and Gmail for Nic's personal account (step D). Off until he
+# connects it (D10) and sets the env var named by credential_env to the credential
+# file's path. The credential must name exactly calendar.events and gmail.readonly
+# (N8, 28 Sep); anything else stops the service at startup. Gmail stays read-only.
+# With [review] also on, a task Nic accepted with a date and a time gets its own
+# calendar entry (docs/operations.md, "Calendar entries"). No values have been
+# accepted or enrolled by this example.
+[google]
+enabled = false
+# account = "REPLACE_WITH_YOUR_ACCOUNT"
+# credential_env = "GT_GOOGLE_CREDENTIAL_FILE"
+# calendars = ["primary"]
+
+# The 06:00 review and right-moment return (step E). Off by default: with no
+# [review] table, or enabled = false, review run/moments read nothing, log
+# nothing and send nothing, and /v1/moments/signals and /v1/review/responses
+# are not registered. No values have been accepted or enrolled by this
+# example; exosuit-review is not an enrolled participant until Nic adds it.
+[review]
+enabled = false
+# sender_participant = "exosuit-review"
+# delivery_participant = "hermes-wa"
+# project = "REPLACE_WITH_VAULT_PROJECT_ID"
+# why_log_file = "/var/lib/gremlin-town-brain/why/why.sqlite3"
+# gap_minutes = 30
+# gap_hours = "08:00-21:00"
+# Where each Telegram message is left for deploy/telegram-courier.sh, which the
+# review and moments units run as root after each run (Diablo's Hermes lets no
+# agent send on its own). Unset, nothing is written. Releases without the courier
+# (20260928-review-01 and earlier) refuse this key: remove it before rolling back.
+# telegram_spool_dir = "/var/lib/gremlin-town-brain/why/spool"
+# The hub keeps the "where I stopped" note for handed-off work (N12a,
+# Proposed): the moments poll starts, updates and closes gt-<request_id>
+# notes in Brain Home from GT's request events. Off by default; needs
+# enabled = true and [brain_core] with a personal owner in its policy.
+# Releases without it (before Ciel slice 2) refuse this key: remove it
+# before rolling back.
+# handoff_notes = false
+# The weekly sweep: on Fridays the 06:00 run also asks this participant to
+# bring anything Nic would be hurt to lose from its workers into Brain Home as
+# suggestions for "To sort". Needs a route from sender_participant to it.
+# Unset, no sweep. Releases without it refuse this key: remove it before
+# rolling back.
+# sweep_participant = "fleet-boss-grok"
+# Proposed: a separate review-names timer asks for one name per thing at this
+# Singapore time. Its OnCalendar must match; the job refuses runs at/after 06:00.
+# names_at = "05:30"
+
+# Step F's two asks, "where am I?" and "what next?" (Ciel slice 4). Off by
+# default: with no [orientation] table, or enabled = false, bc_orient, bc_next
+# and bc_next_respond are absent from the MCP tool list and POST
+# /v1/brain/orient, /v1/brain/next and /v1/brain/next.respond return 422
+# "unsupported Brain operation" - not registered, same as any bc_* op this
+# build doesn't expose. enabled = true requires [review] enabled = true too,
+# since orientation reads and writes the same why-log review does. Nic's focus
+# projects' tasks ("Focus projects", and ranking in "what next?") also need
+# [sitreps] enabled below; without it both asks answer as before.
+[orientation]
+enabled = false
+
+# Task and project sitreps in Brain Home (docs/product/steps/b-project-sitreps.md).
+# Off by default: with no [sitreps] table, or enabled = false, the hub writes no
+# sitrep or Focus copy and project continuity answers exactly as before.
+# enabled = true needs [brain_core] enabled, "sitrep.read" on the cross-project
+# owner in brain-policy.json, and a PC connector with the /v1/compass/focus
+# route (operations.md, "Sitreps"). With [orientation] on too, "where am I?"
+# and "what next?" read them (read-only).
+[sitreps]
+enabled = false
+
+# Step H: the Notion view (docs/product/steps/h-notion-view.md). Off by default:
+# with no [notion_view] table, or enabled = false, `gremlin-town notion-view`
+# refuses to run and nothing is sent to Notion. It copies Brain Home's items
+# (only public and private ones) one way to a Notion database; nothing comes
+# back. Needs [brain_core] enabled; reads [review]'s why-log for today's picks
+# when [review] is on. The Notion key comes from GT_NOTION_TOKEN_FILE (systemd
+# LoadCredential in deploy/gremlin-town-notion-view.service.example) or
+# token_file. Releases without step H refuse this table: remove it before
+# rolling back.
+[notion_view]
+enabled = false
+# token_file = "/etc/gremlin-town/notion-token"
+# database_id = "the Notion database's ID"
+# state_file = "/var/lib/gremlin-town/notion-view.sqlite3"
+# check_seconds = 60
+# repair_hours = 24
+# done_days = 14

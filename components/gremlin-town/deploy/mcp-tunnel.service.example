@@ -1,0 +1,32 @@
+# INACTIVE proposal; installing gremlin-town.service does not install this unit.
+# Requires an authorized tunnel UUID/credential and a dedicated cloudflared-gt user.
+[Unit]
+Description=Gremlin Town public MCP tunnel
+After=network-online.target gremlin-town.service
+Wants=network-online.target
+ConditionPathExists=/etc/cloudflared-gt/config.yml
+ConditionPathExists=/etc/cloudflared-gt/tunnel-credentials.json
+
+[Service]
+Type=simple
+User=cloudflared-gt
+Group=cloudflared-gt
+ExecStart=/usr/bin/cloudflared tunnel --config /etc/cloudflared-gt/config.yml --no-autoupdate run
+Restart=on-failure
+RestartSec=5s
+TimeoutStopSec=30s
+UMask=0077
+NoNewPrivileges=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
+# No writable GT paths and no GT/AgentMail credential access for this user.
+
+[Install]
+WantedBy=multi-user.target

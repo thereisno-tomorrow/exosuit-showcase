@@ -1,0 +1,1322 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "FlowSavvy API",
+    "description": "The FlowSavvy API provides programmatic access to your schedule and tasks and requires Pro to use. Please submit feedback via the in-app help center or email us at support@flowsavvy.app.",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://my.flowsavvy.app"
+    }
+  ],
+  "paths": {
+    "/api/items": {
+      "get": {
+        "tags": [
+          "Items (events and tasks)"
+        ],
+        "summary": "List items",
+        "description": "Returns events and tasks, ordered by id.",
+        "operationId": "list_items",
+        "parameters": [
+          {
+            "name": "modifiedAfter",
+            "in": "query",
+            "description": "When set, only items with `lastModified` strictly after this instant are returned, enabling incremental syncing. ISO 8601 format in UTC (YYYY-MM-DDThh:mm:ssZ)",
+            "schema": {
+              "type": "string",
+              "description": "When set, only items with `lastModified` strictly after this instant are returned, enabling incremental syncing. ISO 8601 format in UTC (YYYY-MM-DDThh:mm:ssZ)",
+              "format": "utc-date-time"
+            }
+          },
+          {
+            "name": "itemType",
+            "in": "query",
+            "description": "When set, only items of that type are returned.",
+            "schema": {
+              "enum": [
+                "task",
+                "event"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "name": "completed",
+            "in": "query",
+            "description": "Only items with this completion status are returned.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "listId",
+            "in": "query",
+            "description": "When set, only tasks in that list are returned; Use `inbox` for the inbox.\n`itemType` must be `task`.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "calendarId",
+            "in": "query",
+            "description": "When set, only events in that calendar are returned.\n`itemType` must be `event`.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "When set, only items whose title, notes, or location contain the value (case-insensitive) are returned",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pageToken",
+            "in": "query",
+            "description": "Token specifying which result page to return. Optional.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum items per response. Allowed range is 1–200; default is 50.",
+            "schema": {
+              "type": "integer",
+              "format": "int",
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ItemsListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/tasks": {
+      "post": {
+        "tags": [
+          "Items (events and tasks)"
+        ],
+        "summary": "Create task",
+        "description": "Create a single task.",
+        "operationId": "create_task",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Task"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/events": {
+      "post": {
+        "tags": [
+          "Items (events and tasks)"
+        ],
+        "summary": "Create event",
+        "description": "Create a single event.",
+        "operationId": "create_event",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Event"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/items/{id}": {
+      "get": {
+        "tags": [
+          "Items (events and tasks)"
+        ],
+        "summary": "Get item",
+        "description": "Get a single event or task by id.",
+        "operationId": "get_item",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Item id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "occurrenceDate",
+            "in": "query",
+            "description": "Optional. Selects one occurrence of a repeating series. Pass `yyyy-MM-dd`.\nFor repeating events and fixed-time tasks, use the date component of that occurrence's `startDateTime`;\nFor repeating auto-scheduled tasks, use the date component of that occurrence's `dueDateTime`.\nIf that occurrence is stored as its own item, that item is returned. Otherwise the response describes that occurrence\n(still under the parent id) so you can update it with PUT and the same occurrenceDate query.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/Task"
+                    },
+                    {
+                      "$ref": "#/components/schemas/Event"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Items (events and tasks)"
+        ],
+        "summary": "Delete item",
+        "description": "Permanently deletes an item",
+        "operationId": "delete_item",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Item id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "occurrenceDate",
+            "in": "query",
+            "description": "Only for repeating items. Identifies which occurrence to delete, as `yyyy-MM-dd`.\nFor repeating fixed-time items, use the date component of that occurrence's `startDateTime`;\nFor repeating auto-scheduled tasks, use the date component of that occurrence's `dueDateTime`.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "scope",
+            "in": "query",
+            "description": "Required for repeating items; controls whether the delete applies to just the specified occurrence or to all future occurrences.",
+            "schema": {
+              "enum": [
+                "thisOccurrence",
+                "thisAndFutureOccurrences"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/tasks/{id}": {
+      "put": {
+        "tags": [
+          "Items (events and tasks)"
+        ],
+        "summary": "Update task",
+        "description": "Replaces a task with the request body. To update a task, get the current task first, \nchange properties, then send the whole task back. Partial PATCH-style bodies are NOT \nsupported. Omitted fields are cleared or reset.",
+        "operationId": "update_task",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Task id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "occurrenceDate",
+            "in": "query",
+            "description": "Only for repeating tasks. Identifies which occurrence to edit, as `yyyy-MM-dd`.\nFor repeating fixed-time tasks, use the date component of that occurrence's `startDateTime`;\nFor repeating auto-scheduled tasks, use the date component of that occurrence's `dueDateTime`.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "scope",
+            "in": "query",
+            "description": "Required for repeating tasks; controls whether the update applies to just the specified occurrence or to all future occurrences.",
+            "schema": {
+              "enum": [
+                "thisOccurrence",
+                "thisAndFutureOccurrences"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Task"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/events/{id}": {
+      "put": {
+        "tags": [
+          "Items (events and tasks)"
+        ],
+        "summary": "Update event",
+        "description": "Replaces an event with the request body. To update an event, get the current event first, \nchange properties, then send the whole event back. Partial PATCH-style bodies are NOT \nsupported. Omitted fields are cleared or reset.",
+        "operationId": "update_event",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Event id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "occurrenceDate",
+            "in": "query",
+            "description": "Only for repeating events. For a repeating event, which occurrence to edit, as `yyyy-MM-dd`,\nmatching the date component of that occurrence's `startDateTime`.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "scope",
+            "in": "query",
+            "description": "Required for repeating events; controls whether the update applies to just the specified occurrence or to all future occurrences.",
+            "schema": {
+              "enum": [
+                "thisOccurrence",
+                "thisAndFutureOccurrences"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Event"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/tasks/{id}/complete": {
+      "post": {
+        "tags": [
+          "Items (events and tasks)"
+        ],
+        "summary": "Complete task",
+        "description": "Marks a task complete. If the task is already completed, the response is still `200` with the current item.\nCompleting an occurrence of a repeating task creates a new task for that occurrence that's completely separate from the parent series.",
+        "operationId": "complete_task",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Task id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "occurrenceDate",
+            "in": "query",
+            "description": "For repeating tasks only. Identifies an occurrence out of the repeating series. Formatted as `yyyy-MM-dd`.\nFor repeating fixed-time tasks, the date component of that occurrence's `startDateTime`;\nFor repeating auto-scheduled tasks, the date component of that occurrence's `dueDateTime`.\nOmit to complete the first occurrence.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Task"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/tasks/{id}/uncomplete": {
+      "post": {
+        "tags": [
+          "Items (events and tasks)"
+        ],
+        "summary": "Uncomplete task",
+        "description": "Marks a task incomplete. If the task is already incomplete, the response is still `204`.",
+        "operationId": "uncomplete_task",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Task id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/api/schedule": {
+      "get": {
+        "tags": [
+          "Schedule"
+        ],
+        "summary": "Get schedule",
+        "description": "Get schedule entries within a date range. Max date range is 31 days.",
+        "operationId": "get_schedule",
+        "parameters": [
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "Inclusive range start date in the time zone set in the user's settings. Use yyyy-MM-dd.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "Inclusive range end date in the time zone set in the user's settings. Use yyyy-MM-dd.",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ScheduleResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/recalculate": {
+      "post": {
+        "tags": [
+          "Schedule"
+        ],
+        "summary": "Recalculate",
+        "description": "Runs FlowSavvy's auto-scheduling engine and reschedules auto-scheduled tasks.\nChanges to events or tasks via the API already trigger a recalculation after \na short delay, but this can be used to recalculate immediately or to reschedule \npast/in-progress tasks.",
+        "operationId": "recalculate",
+        "parameters": [
+          {
+            "name": "reschedulePastTasks",
+            "in": "query",
+            "description": "When true, all tasks, including past and in-progress tasks, get rescheduled.\nWhen false, past and in-progress auto-scheduled time blocks stay put while the rest of the schedule is recalculated.",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        }
+      }
+    },
+    "/api/calendars": {
+      "get": {
+        "tags": [
+          "Calendars"
+        ],
+        "summary": "List calendars",
+        "operationId": "list_calendars",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CalendarsListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/lists": {
+      "get": {
+        "tags": [
+          "Lists"
+        ],
+        "summary": "List lists",
+        "operationId": "list_lists",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListsListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/scheduling-hours": {
+      "get": {
+        "tags": [
+          "Scheduling hours"
+        ],
+        "summary": "List scheduling hours",
+        "operationId": "list_scheduling_hours",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SchedulingHoursListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Calendar": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Calendar display color in hex format (e.g. \"#FF0000\")."
+          },
+          "hidden": {
+            "type": "boolean",
+            "description": "Indicates whether the events in this calendar are visible on the schedule view."
+          },
+          "id": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "readOnly": true
+          },
+          "source": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Calendar provider identifier. Possible values are `flowsavvy`, `google`, `outlook`, or `icloud`."
+          },
+          "sourceUrl": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "When this calendar is subscribed via a web feed, the ICS (or equivalent) URL; otherwise `null`."
+          },
+          "title": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "CalendarsListResponse": {
+        "type": "object",
+        "properties": {
+          "calendars": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/Calendar"
+            }
+          },
+          "defaultCalendarId": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The user's default calendar id."
+          }
+        },
+        "additionalProperties": false
+      },
+      "Event": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Item"
+          },
+          {
+            "required": [
+              "endDateTime",
+              "startDateTime"
+            ],
+            "type": "object",
+            "properties": {
+              "allDay": {
+                "type": "boolean"
+              },
+              "busy": {
+                "type": [
+                  "null",
+                  "boolean"
+                ],
+                "description": "Indicates busy/free availability. Defaults to `false` for all-day events and\n`true` for regular events."
+              },
+              "calendarId": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "The id of the calendar this event belongs to. Omit to set to the user's default calendar."
+              },
+              "endDateTime": {
+                "type": "string",
+                "description": "End of the event. This date/time is exclusive, so for all-day events, this is \n12am on the day after the last day of the event. For example, an all-day event \non May 10 would have an endDateTime of May 11 at 12am. ISO 8601 format without offset (YYYY-MM-DDThh:mm:ss)",
+                "format": "local-date-time"
+              },
+              "location": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "startDateTime": {
+                "type": "string",
+                "description": "Start of the event. For all-day events, always uses midnight. ISO 8601 format without offset (YYYY-MM-DDThh:mm:ss)",
+                "format": "local-date-time"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "Item": {
+        "required": [
+          "itemType"
+        ],
+        "type": "object",
+        "properties": {
+          "itemType": {
+            "enum": [
+              "task",
+              "event"
+            ],
+            "type": "string",
+            "description": "Discriminator for item subtype. Can be `task` or `event`.",
+            "readOnly": true
+          },
+          "bufferAfterMinutes": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Buffer after this item in minutes. Defaults to the value set in event and task settings.",
+            "format": "int"
+          },
+          "bufferBeforeMinutes": {
+            "type": [
+              "null",
+              "integer"
+            ],
+            "description": "Buffer before this item in minutes. Defaults to the value set in event and task settings.",
+            "format": "int"
+          },
+          "cancelledOccurrenceDates": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string",
+              "format": "date"
+            },
+            "description": "For repeating items only, dates where an occurrence was deleted.",
+            "readOnly": true
+          },
+          "customColor": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Event/task display color override in hex format (e.g. \"#FF0000\").\nNull means \"use calendar/list/default color behavior.\""
+          },
+          "dateCreated": {
+            "type": "string",
+            "description": "ISO 8601 format in UTC (YYYY-MM-DDThh:mm:ssZ)",
+            "format": "utc-date-time",
+            "readOnly": true
+          },
+          "id": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "readOnly": true
+          },
+          "lastModified": {
+            "type": "string",
+            "description": "ISO 8601 format in UTC (YYYY-MM-DDThh:mm:ssZ)",
+            "format": "utc-date-time",
+            "readOnly": true
+          },
+          "notes": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Rich-text HTML string.\nTypical tags include paragraphs, inline formatting, lists, and links.\nExamples: `<p>Call Alex</p>`, `<p><strong>Important:</strong> bring docs</p>`,\n`<ul><li>First</li><li>Second</li></ul>`.\nTruncated to 8192 chars during validation."
+          },
+          "occurrenceDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "When this item is an edited occurrence of a repeating series, this date identifies where the occurrence was originally in the repeating series.\nFor repeating events and fixed-time tasks, this is the date component of the occurrence's original `startDateTime`.\nFor repeating auto-scheduled tasks, this is the date component of the occurrence's original `dueDateTime`.",
+            "format": "date",
+            "readOnly": true
+          },
+          "parentItemId": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Points to the ID of this item's parent when this item is an edited occurrence of a recurring item.\nIf null, this item is not an edited occurrence and represents the main/original item.",
+            "readOnly": true
+          },
+          "recurrenceRule": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RRULE string without the `RRULE:` prefix (e.g. FREQ=DAILY;INTERVAL=1). Null means non-repeating."
+          },
+          "timeZone": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Can be an IANA time zone id or `Floating`, which follows the user's time zone when it changes.\nSet to null to apply the user's \"time zone default\" setting."
+          },
+          "title": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "url": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Deep link to open this item in FlowSavvy.",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "discriminator": {
+          "propertyName": "itemType",
+          "mapping": {
+            "task": "#/components/schemas/Task",
+            "event": "#/components/schemas/Event"
+          }
+        }
+      },
+      "ItemsListResponse": {
+        "type": "object",
+        "properties": {
+          "items": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/Task"
+                },
+                {
+                  "$ref": "#/components/schemas/Event"
+                }
+              ]
+            }
+          },
+          "nextPageToken": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Token used to access the next page of this result. Omitted if no further results are available."
+          }
+        },
+        "additionalProperties": false
+      },
+      "List": {
+        "type": "object",
+        "properties": {
+          "color": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The list's display color in hex format (e.g. \"#FF0000\").\nTasks in this list use this color when the global task color setting is \"Use list color\"\nand the task has no custom color override."
+          },
+          "id": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "readOnly": true
+          },
+          "schedulingHoursId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "title": {
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        },
+        "additionalProperties": false
+      },
+      "ListsListResponse": {
+        "type": "object",
+        "properties": {
+          "defaultListId": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The user's default task list id, or `null` for the inbox."
+          },
+          "lists": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/List"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "ScheduleItem": {
+        "type": "object",
+        "properties": {
+          "allDay": {
+            "type": "boolean"
+          },
+          "completed": {
+            "type": "boolean",
+            "description": "Whether the underlying item is fully completed.\nThis differs from `thisPartCompleted`, which only refers to this specific schedule block."
+          },
+          "endTime": {
+            "type": "string",
+            "description": "ISO 8601 format without offset (YYYY-MM-DDThh:mm:ss)",
+            "format": "local-date-time"
+          },
+          "isAutoScheduled": {
+            "type": "boolean",
+            "description": "Indicates whether this block was generated for an auto-scheduled task."
+          },
+          "itemId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "itemType": {
+            "enum": [
+              "task",
+              "event"
+            ],
+            "type": "string",
+            "description": "Indicates whether the schedule entry belongs to a `task` or an `event`."
+          },
+          "occurrenceDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "For repeating items only. This date identifies the occurrence in a repeating series.\nFor repeating events and fixed-time tasks, this is the date component of the occurrence's `startDateTime`.\nFor repeating auto-scheduled tasks, this is the date component of the occurrence's `dueDateTime`.",
+            "format": "date"
+          },
+          "startTime": {
+            "type": "string",
+            "description": "ISO 8601 format without offset (YYYY-MM-DDThh:mm:ss)",
+            "format": "local-date-time"
+          },
+          "thisPartCompleted": {
+            "type": "boolean"
+          },
+          "title": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "url": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Deep link to open this item in FlowSavvy.",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Represents one rendered segment on the calendar and may be one part of a larger event or task."
+      },
+      "ScheduleResponse": {
+        "type": "object",
+        "properties": {
+          "scheduleItems": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "description": "Represents one rendered segment on the calendar and may be one part of a larger event or task.",
+              "$ref": "#/components/schemas/ScheduleItem"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "SchedulingHours": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "readOnly": true
+          },
+          "title": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "recurringHours": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": [
+                "null",
+                "array"
+              ],
+              "items": {
+                "$ref": "#/components/schemas/TimeRange"
+              }
+            },
+            "description": "Recurring weekly availability keyed by weekday (`sunday` … `saturday`)."
+          },
+          "dateOverrides": {
+            "type": [
+              "null",
+              "object"
+            ],
+            "additionalProperties": {
+              "type": [
+                "null",
+                "array"
+              ],
+              "items": {
+                "$ref": "#/components/schemas/TimeRange"
+              }
+            },
+            "description": "Date-specific overrides keyed by calendar date (YYYY-MM-DD). Dates not listed use `recurringHours`.\nAn empty array means that date is explicitly blocked."
+          }
+        },
+        "additionalProperties": false
+      },
+      "SchedulingHoursListResponse": {
+        "type": "object",
+        "properties": {
+          "defaultSchedulingHoursId": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The user's default scheduling hours id."
+          },
+          "schedulingHours": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/SchedulingHours"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "Task": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Item"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "blockedByIds": {
+                "type": [
+                  "null",
+                  "array"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "IDs of items that this task must be scheduled after."
+              },
+              "blocksIds": {
+                "type": [
+                  "null",
+                  "array"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "description": "IDs of items that this task must be scheduled before."
+              },
+              "canBeStartedAt": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "Only applies to auto-scheduled tasks. Indicates when work can begin.\nFor non-repeating tasks, null means \"can be started now\".\nFor repeating tasks, the time span between `canBeStartedAt` and `dueDateTime`\ndefines how early each occurrence can be started before its due date. ISO 8601 format without offset (YYYY-MM-DDThh:mm:ss)",
+                "format": "local-date-time"
+              },
+              "completed": {
+                "type": "boolean",
+                "readOnly": true
+              },
+              "dueDateTime": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "The date/time the task should be scheduled before. Required for repeating auto-scheduled tasks since the due date is what repeats. ISO 8601 format without offset (YYYY-MM-DDThh:mm:ss)",
+                "format": "local-date-time"
+              },
+              "durationMinutes": {
+                "type": [
+                  "null",
+                  "integer"
+                ],
+                "description": "Only applies to auto-scheduled tasks. Tasks must be less than 24 hours long.",
+                "format": "int"
+              },
+              "endDateTime": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "Only applies to fixed-time tasks. Tasks must be less than 24 hours long. ISO 8601 format without offset (YYYY-MM-DDThh:mm:ss)",
+                "format": "local-date-time"
+              },
+              "isAutoIgnored": {
+                "type": [
+                  "null",
+                  "boolean"
+                ],
+                "description": "When a task can't be scheduled before its deadline: if `true`, the task is ignored; \nif `false`, it is scheduled after the deadline. Defaults to `true` for repeating tasks\nand `false` for non-repeating tasks."
+              },
+              "isAutoScheduled": {
+                "type": [
+                  "null",
+                  "boolean"
+                ],
+                "description": "When `true`, FlowSavvy auto-schedules the task based on duration, due date,\nscheduling hours, and more. When `false`, the task is a <i>fixed-time task</i>\npinned to a specific time using `startDateTime` and `endDateTime` instead.\nTasks in the inbox (`listId` is `inbox`) are never scheduled.\nWhen omitted, presence of `startDateTime` implies fixed-time, and absence of `startDateTime` implies auto-scheduled."
+              },
+              "listId": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "The ID of the task list this task belongs to. `inbox` means the task is in the inbox. \nTasks in the inbox do not get scheduled. Omit to set to the user's default list."
+              },
+              "minLengthMinutes": {
+                "type": [
+                  "null",
+                  "integer"
+                ],
+                "description": "Minimum length in minutes of any scheduled chunk of this task.\nOnly applies to auto-scheduled tasks. Set to the full duration to disable splitting.\nWhen omitted, this value gets set using the values for \"Splittable\" and \"Min duration\"\nin \"Events and tasks\" settings and the task's duration.",
+                "format": "int"
+              },
+              "priority": {
+                "enum": [
+                  "low",
+                  "normal",
+                  "high",
+                  "asap"
+                ],
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "Omitted or null defaults to `normal`."
+              },
+              "progressMinutes": {
+                "type": [
+                  "null",
+                  "integer"
+                ],
+                "description": "Completed progress in minutes. Ignored when creating a task.",
+                "format": "int"
+              },
+              "schedulingHoursId": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "The id of the scheduling hours during which this task can be scheduled. Only applies to auto-scheduled tasks.\nOmit to set to the list's default scheduling hours."
+              },
+              "startDateTime": {
+                "type": [
+                  "null",
+                  "string"
+                ],
+                "description": "Only applies to fixed-time tasks. ISO 8601 format without offset (YYYY-MM-DDThh:mm:ss)",
+                "format": "local-date-time"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      },
+      "TimeRange": {
+        "type": "object",
+        "properties": {
+          "startTime": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Start of the window in local time (HH:mm)."
+          },
+          "endTime": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "End of the window in local time (HH:mm). `00:00` means 12am the next day."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "scheme": "Bearer",
+        "bearerFormat": "API key"
+      }
+    }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ],
+  "tags": [
+    {
+      "name": "Authentication",
+      "description": "All API requests must include either your **API key** or an **OAuth access token** in the `Authorization` header using the **Bearer** scheme.\r\nAPI keys can be viewed or regenerated from **Settings → Integrations → API** in the FlowSavvy app (requires Pro).\r\n```http\r\nAuthorization: Bearer YOUR_API_KEY\r\n```"
+    },
+    {
+      "name": "MCP",
+      "description": "FlowSavvy exposes an **MCP** server at the following URL:\r\n```http\r\nhttps://my.flowsavvy.app/mcp\r\n```\r\nThe server supports all the same operations as the API and uses **OAuth** for authentication instead of your API key."
+    },
+    {
+      "name": "Items (events and tasks)"
+    },
+    {
+      "name": "Schedule"
+    },
+    {
+      "name": "Calendars"
+    },
+    {
+      "name": "Lists"
+    },
+    {
+      "name": "Scheduling hours"
+    }
+  ]
+}

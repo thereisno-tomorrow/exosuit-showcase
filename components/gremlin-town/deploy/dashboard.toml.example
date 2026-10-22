@@ -1,0 +1,15 @@
+# Proposed host settings. No feature is enabled by installing this example.
+[dashboard]
+enabled = false
+reads = false
+writes = false
+ask_diablo = false
+host = "127.0.0.1"
+port = 8794
+# The actual HTTPS origin and the personal owner's ID are set at installation.
+# No wildcard origins, parent-domain rp_id or alternate owner are accepted.
+# origin = "https://dashboard.example.test"
+# rp_id = "dashboard.example.test"
+# owner_id = "personal-owner-from-policy"
+# state_file = "/var/lib/gremlin-town/dashboard/auth.sqlite"
+# session_secret_file = "/run/credentials/gremlin-town-dashboard/session-secret"

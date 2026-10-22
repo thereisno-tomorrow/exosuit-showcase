@@ -1,0 +1,37 @@
+name: Local contracts and packages
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.10.0"
+      - name: Install Python
+        run: uv python install 3.13
+      - name: Install locked component environments
+        run: |
+          uv sync --project components/brain-core --python 3.13 --frozen
+          uv sync --project components/gremlin-town --python 3.13 --frozen --extra dev
+      - name: Brain Core
+        run: uv run --project components/brain-core --frozen pytest components/brain-core/tests -q
+      - name: Gremlin Town
+        run: uv run --project components/gremlin-town --frozen pytest components/gremlin-town/tests -q
+      - name: Offline journey
+        run: uv run --project components/gremlin-town --frozen python examples/offline_journey.py
+      - name: Build both distributions
+        run: |
+          uv build --project components/brain-core
+          uv build --project components/gremlin-town

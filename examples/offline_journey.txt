@@ -1,0 +1,11 @@
+EXOSUIT / synthetic offline journey
+Real: policy, SQLite outbox, service, record store. Fake: transport and work result.
+1. Alice -> Bob: queued; replay uses the same operation.
+2. Injected lost receipt: provider has 1 message; hub reports uncertain.
+3. Reopened SQLite, reconciled: accepted; 1 send, 1 message, no resend.
+4. Unrelated participant cannot read the request: ACCESS_DENIED.
+5. Bob returns a synthetic result; Alice reads verified provider bytes.
+6. Bob cannot self-check; Alice's independent check enters the event log.
+7. Fresh Brain Core reader recovers the result and stopping note:
+   Ask the human reviewer whether to publish the synthetic launch.
+PASS: all invariants checked. No external messages or publication.
