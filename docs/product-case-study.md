@@ -4,6 +4,8 @@ An agent can answer a question and still leave the user with the coordination wo
 
 Exosuit explores a shared memory and handoff layer for that gap. Its product question is whether durable context and explicit work state can make a change of agent less costly.
 
+The [design history](design-history.md) follows how the components came together, why the work model changed, how the review interaction developed and where scheduling was delegated. The [documentation index](index.md) links the development and operating accounts.
+
 ## The interaction
 
 A person saves a commitment. An agent receives a bounded request and returns an attributed result. The person checks the result, saves where they stopped and later asks what is next. A review assembles current records rather than treating an old chat summary as current truth.

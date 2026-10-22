@@ -2,6 +2,8 @@
 
 Exosuit was developed with AI coding assistants. The project owner supplied product direction, constraints and acceptance decisions. The public material is intended to be inspected through source, failure tests and a runnable synthetic example.
 
+The [AI-assisted development account](ai-development.md) covers model review, context management, harness choices and the work-model build. The [design history](design-history.md) follows the product decisions; [operating the integrations](operations.md) follows selected connected-system checks. The [documentation index](index.md) links the full set.
+
 This snapshot reconciles the newer remote source baseline with a coherent morning-review branch and selected missing runtime corrections. Older placement patches, a work-in-progress dashboard branch and a disabled semantic-answering candidate were excluded where they would regress newer interfaces or imply unsupported readiness.
 
 The private repository and its development history remain separate. Personal records and messages were replaced with fictional exhibition scenarios. Private ownership policy was replaced with a bundled demonstration catalog; durable owner writes require explicit root bindings. Original record identifiers and personal host bindings are not installation instructions for this repo.

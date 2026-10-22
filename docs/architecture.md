@@ -2,6 +2,8 @@
 
 Exosuit separates durable facts and deterministic rules from agent interaction. A language model may interpret a conversation or propose work. It does not become the authority for identity, access, publication or completion merely by describing those things.
 
+For the decisions behind these boundaries, read the [design history](design-history.md), especially [model and code responsibilities](design-history.md#model-and-code-responsibilities). The [documentation index](index.md) also links development methods, operating examples and evaluation.
+
 ```mermaid
 flowchart LR
     A[Agent client] --> G[Gremlin Town\nidentity and request policy]
