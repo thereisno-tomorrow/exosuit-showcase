@@ -40,11 +40,11 @@ It works in three parts, one for each thing you stop carrying in your head.
 
 **1. Memory: one shared record.** Tell any assistant something once, in plain words. Exosuit saves it to a record you own and gives you a receipt, or a clear failure. It never says "saved" when it isn't. Every assistant you've connected can then read it, so they all start from the same facts. An idea stays an idea until you say it's a task, and nothing is overwritten, only versioned.
 
-**2. Attention: handoffs that are tracked and checked.** When you give work to an assistant, Exosuit records who got it, what was asked and where it stands. When the assistant says "done", Exosuit doesn't take its word for it. The request stays open until someone else checks the result, and the assistant that did the work can't sign it off. You don't have to watch your agents. Exosuit does that, and it only comes back to you when something needs you.
+**2. Attention: handoffs that are tracked and checked.** When you give work to an assistant, Exosuit records who got it, what was asked and where it stands. When the assistant says "done", Exosuit requires a separate reviewer to sign off. The request stays open until someone else checks the result, and the assistant that did the work can't sign it off. Exosuit tracks those handoffs and flags what needs you.
 
 **3. Focus: Ciel, the executive function layer.** Ciel does the planning and prioritising, and you approve. It follows the same GTD steps:
 
-- **Capture and sort.** Whatever you tell an assistant is captured. A morning review helps you sort what's new into what it is and what's next.
+- **Capture and sort.** Tell an assistant to save something, and it goes into the shared record. A morning review helps you sort what's new into what it is and what's next.
 - **Review.** The morning review shows what's coming up and what slipped. On Fridays a longer one covers everything you're waiting on and every goal.
 - **Rank.** You say what a slip would cost, from "changes my life" down to "nothing much". Fixed rules rank everything and show the reason for each pick.
 - **Choose.** Each morning you pick your day. Ask "what next?" any time and you get one top pick and two alternatives.

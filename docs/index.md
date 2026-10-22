@@ -1,5 +1,7 @@
 # Exosuit documentation
 
+I built Exosuit for my own use: keeping my work connected across AI assistants. This repository shares the implementation and the decisions behind it. It is a personal tool, with no commercial launch planned.
+
 The [architecture](architecture.md) describes the current code. The [quickstart](quickstart.md) runs the local example. The documents below explain how the design developed and how it was built and checked.
 
 | Question | Read |

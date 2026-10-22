@@ -18,7 +18,9 @@ from typing import Any
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 BRAIN_CORE_ROOT = REPOSITORY_ROOT.parent / "brain-core"
 BRAIN_CORE_SRC = BRAIN_CORE_ROOT / "src"
-BRAIN_PYTHON = BRAIN_CORE_ROOT / ".venv" / "Scripts" / "python.exe"
+BRAIN_PYTHON = BRAIN_CORE_ROOT / ".venv" / (
+    "Scripts/python.exe" if os.name == "nt" else "bin/python"
+)
 
 for source in (REPOSITORY_ROOT / "src", BRAIN_CORE_SRC):
     rendered = str(source)
@@ -367,8 +369,10 @@ def create_escape_reparse(fixture: FixtureEnvironment) -> Path:
 
 
 def remove_escape_reparse(link: Path) -> None:
-    if link.exists() or link.is_symlink():
-        link.rmdir() if link.is_dir() else link.unlink()
+    if link.is_symlink():
+        link.unlink()
+    elif link.is_junction():
+        link.rmdir()
 
 
 @dataclass(slots=True)

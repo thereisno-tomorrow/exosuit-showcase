@@ -2,7 +2,7 @@
 
 An agent can answer a question and still leave the user with the coordination work: remembering a commitment, explaining it to another agent, finding the returned result and deciding where to resume.
 
-Exosuit explores a shared memory and handoff layer for that gap. Its product question is whether durable context and explicit work state can make a change of agent less costly.
+I built Exosuit for my own use, to keep my work connected across AI assistants. Shared memory and explicit work state address the coordination I was doing myself. This repository shares that personal tool and its design history; I am not bringing it to market.
 
 The [design history](design-history.md) follows how the components came together, why the work model changed, how the review interaction developed and where scheduling was delegated. The [documentation index](index.md) links the development and operating accounts.
 
@@ -24,8 +24,8 @@ The repository contains the record, coordination and review machinery for this i
 
 The engineering evidence is strongest around record boundaries, durable publication, request transitions and recoverable failures. The source also contains a substantial review flow and optional integrations. Current local checks are listed in [validation](validation.md).
 
-The project began as a personal system. This public snapshot does not establish broad adoption, improved productivity, clinical benefit or autonomous capture of everything said in a conversation. Capture still depends on an agent invoking the appropriate operation. The current research question is product usefulness over repeated ordinary use, not whether a large collection of tools can be connected.
+The practical test is whether Exosuit helps me resume work, keep track of commitments and spend less effort coordinating assistants over repeated use. The local checks exercise the underlying mechanisms. Capture still depends on an agent invoking the appropriate operation.
 
 ## What to improve next
 
-Reduce the size of central interpretation/storage modules, measure completion and recovery across repeated sessions, and test whether people can understand the review without learning the internal record model. Extend integration claims only when their account, delivery and real-use checks have been repeated.
+Reduce the size of central interpretation/storage modules, measure completion and recovery across repeated sessions, and test whether the review makes my next step clear without requiring me to inspect the internal record model. Extend integration claims only when their account, delivery and real-use checks have been repeated.

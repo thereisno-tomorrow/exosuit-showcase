@@ -1,5 +1,7 @@
 # Working on Exosuit
 
+Exosuit is a personal tool for its owner's work across AI assistants. This repository shares its implementation and design history; no commercial launch is planned.
+
 Start with README.md, docs/architecture.md and docs/quickstart.md. Brain Core and Gremlin Town are separate packages in one repository; review and orientation features live within them.
 
 The [documentation index](docs/index.md) links design history, model/code responsibilities, AI-assisted development, operational examples and evaluation. These accounts distinguish historical development runs from behavior demonstrated by the current snapshot.

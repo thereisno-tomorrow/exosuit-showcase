@@ -1,6 +1,6 @@
 # Local validation
 
-Prepared on 22 October 2026. This record describes local source and package checks. The GitHub Actions workflow is proposed configuration; it has not run on GitHub. No live provider, deployment or personal account was exercised.
+Prepared on 22 October 2026. This record describes local source and package checks. GitHub Actions results are recorded separately below. No live provider, deployment or personal account was exercised.
 
 The validated source comes from checkpoint `cc96617` in the local preparation repository. This publication snapshot preserves that source, with subsequent documentation updates and aggregate experiment data. It starts a fresh history so removed concept media is not included in earlier public commits.
 
@@ -27,6 +27,14 @@ The two Windows skips cover POSIX file modes and systemd credential mounts. The 
 
 Historical parser acceptance was replaced with explicit legacy-field/current-reader roundtrip checks because this repository does not include private historical Git objects. This proves the retained shape and inverse behavior, not acceptance by an old installed release. Original response-size limits and committed-byte integrity checks remain enforced.
 
+## GitHub Actions
+
+The [published snapshot run](https://github.com/thereisno-tomorrow/exosuit-showcase/actions/runs/39784597048) passed Brain Core on Ubuntu and Windows. Gremlin Town failed on Ubuntu because its test harness used Windows-only junction creation and interpreter paths, and treated a directory symlink as a directory during cleanup. On Windows, 3,702 tests passed and the dashboard JavaScript subprocess exceeded its 15-second timeout.
+
+The follow-up patch uses junctions on Windows and symlinks on POSIX, selects the adjacent virtual environment's interpreter for each platform, and removes symlinks without following them. CI explicitly installs Node 24, and the dashboard subprocess has a 60-second startup/completion budget with all four scenario assertions retained. A passing rerun on both platforms is required to confirm the CI repair.
+
+Local patch checks on Windows, Python 3.13.1 and Node 24.20.0: all 96 tests in the affected host-pack and connector test files passed, and the dashboard JavaScript regression test passed. The offline journey passed and both source distributions and wheels built. The full component suites were not rerun locally for this test-harness patch.
+
 ## Reproduce
 
 From the repository root, with uv installed on PATH:
@@ -49,4 +57,4 @@ The export excludes private Git history, memories, conversations, operational au
 
 Detect-secrets 1.5.0 was run locally with network verification disabled. Its final scan reported 86 candidates in 46 files. Review classified them as integrity digests, explicit synthetic credentials, rejection-test URLs, credential paths/field names and scanner literals. No actual credential was established by those findings. The scan excluded dependency environments, generated temporary files, lockfile hashes and rendered media. Separate path/scenario checks covered the included source.
 
-This is not a guarantee against every privacy leak or vulnerability. Linux CI, live integrations, production operation and broad product usefulness have not been established by these checks. The historical model comparisons were not rerun.
+This is not a guarantee against every privacy leak or vulnerability. A passing Linux CI run, live integrations and production operation have not been established by these checks. The historical model comparisons were not rerun.
