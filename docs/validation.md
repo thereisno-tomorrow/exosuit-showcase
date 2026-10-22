@@ -29,9 +29,16 @@ Historical parser acceptance was replaced with explicit legacy-field/current-rea
 
 ## GitHub Actions
 
-The [published snapshot run](https://github.com/thereisno-tomorrow/exosuit-showcase/actions/runs/39784597048) passed Brain Core on Ubuntu and Windows. Gremlin Town failed on Ubuntu because its test harness used Windows-only junction creation and interpreter paths, and treated a directory symlink as a directory during cleanup. On Windows, 3,702 tests passed and the dashboard JavaScript subprocess exceeded its 15-second timeout.
+The [cross-platform run](https://github.com/thereisno-tomorrow/exosuit-showcase/actions/runs/39790158593) checked commit `e1bd8b5` on 22 October 2026.
 
-The follow-up patch uses junctions on Windows and symlinks on POSIX, selects the adjacent virtual environment's interpreter for each platform, and removes symlinks without following them. CI explicitly installs Node 24, and the dashboard subprocess has a 60-second startup/completion budget with all four scenario assertions retained. A passing rerun on both platforms is required to confirm the CI repair.
+| Check | Ubuntu 24.04 | Windows |
+|---|---|---|
+| Brain Core full suite | 2,854 passed | 2,854 passed |
+| Gremlin Town full suite | 3,704 passed, 1 skipped | 3,703 passed, 2 skipped |
+| Offline journey | Passed | Passed |
+| Both source distributions and wheels | Built successfully | Built successfully |
+
+The test harness uses junctions on Windows and symlinks on POSIX, selects the adjacent virtual environment's interpreter for each platform, and removes symlinks without following them. CI explicitly installs Node 24. The dashboard subprocess has a 60-second startup/completion budget with all four scenario assertions retained.
 
 Local patch checks on Windows, Python 3.13.1 and Node 24.20.0: all 96 tests in the affected host-pack and connector test files passed, and the dashboard JavaScript regression test passed. The offline journey passed and both source distributions and wheels built. The full component suites were not rerun locally for this test-harness patch.
 
@@ -57,4 +64,4 @@ The export excludes private Git history, memories, conversations, operational au
 
 Detect-secrets 1.5.0 was run locally with network verification disabled. Its final scan reported 86 candidates in 46 files. Review classified them as integrity digests, explicit synthetic credentials, rejection-test URLs, credential paths/field names and scanner literals. No actual credential was established by those findings. The scan excluded dependency environments, generated temporary files, lockfile hashes and rendered media. Separate path/scenario checks covered the included source.
 
-This is not a guarantee against every privacy leak or vulnerability. A passing Linux CI run, live integrations and production operation have not been established by these checks. The historical model comparisons were not rerun.
+This is not a guarantee against every privacy leak or vulnerability. Live integrations and production operation have not been established by these checks. The historical model comparisons were not rerun.

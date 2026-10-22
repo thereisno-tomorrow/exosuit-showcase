@@ -97,7 +97,7 @@ This demo covers the memory and handoff half. The ranking, stakes and morning re
 
 ## What's built and what isn't
 
-- **Tested:** 6,557 tests pass locally (2 POSIX-only checks skipped on Windows). The Linux CI is set up but hasn't run on GitHub yet. [Validation](docs/validation.md) has the commands and limits.
+- **Tested:** 6,557 tests pass locally (2 POSIX-only checks skipped on Windows). GitHub CI passes on Ubuntu and Windows. [Validation](docs/validation.md) has the commands and limits.
 - **Optional pieces** (morning card, dashboard, calendar, email ping) are in the source, off by default, and need your own accounts. The demo doesn't touch them.
 - **One person per copy.** Exosuit is built for a single owner. Teams and shared records aren't supported.
 - **Not shown yet:** whether it keeps being useful week after week. I built it for my own use, with AI coding assistants ([how](docs/development.md)), so the open question is whether it holds up for anyone else.
